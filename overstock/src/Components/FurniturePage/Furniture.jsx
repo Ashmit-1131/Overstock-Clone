@@ -2,7 +2,7 @@ import React from 'react'
 
 const Furniture = () => {
   return (
-    <div>Furniture</div>
+    <div>Furniture page here </div>
   )
 }
 
