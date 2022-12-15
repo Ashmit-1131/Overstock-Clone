@@ -154,21 +154,15 @@ function Furniture(){
                 Home Gym
               </Heading>
              </Stack>
+            </Box>  
+            <Box style={{padding:"40px"}}>
+              <Image src="https://ak1.ostkcdn.com/img/mxc/12122022_Desktop_Furniture-AshleyFurniture.jpg?imwidth=680" width="600px" height="400px"></Image>
+              <Text position="absolute" zIndex="5" top="10" backgroundColor="red" color="white">Extra 15% off, Select Furniture</Text>
             </Box>
-            <Box>
-               <Box boxSize='xl' w={500}>
-                <Image src='https://ak1.ostkcdn.com/img/mxc/12122022_Desktop_Furniture-AshleyFurniture.jpg?imwidth=680' alt='Dan Abramov'  style={{width:"900px"}} />
-               </Box>
+            <Box >
+                <Image src="https://ak1.ostkcdn.com/img/mxc/10312022_HOLIDAY2022_Furniture_MM_01.png?imwidth=320" w={300}></Image>
+                <Image src="https://ak1.ostkcdn.com/img/mxc/10312022_HOLIDAY2022_Furniture_MM_02.png?imwidth=320" w={300}></Image>
             </Box>
-            <Box>
-              <Box>
-                <Image src="https://ak1.ostkcdn.com/img/mxc/10312022_HOLIDAY2022_Furniture_MM_01.png?imwidth=320"></Image>
-              </Box>
-               <Box boxSize='sm' >
-                 <Image src='https://ak1.ostkcdn.com/img/mxc/10312022_HOLIDAY2022_Furniture_MM_02.png?imwidth=320' alt='Dan Abramov' />
-               </Box>
-            </Box>
-            
           </Flex>
        </div>
       <SimpleGrid  mt={3} p={5} columns={[2, null, 4]} spacing='15px'>
