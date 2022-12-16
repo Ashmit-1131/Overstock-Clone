@@ -23,15 +23,9 @@ function App() {
 
     <div className="App">
 
-      
       <Navbar/>
       <Home/>
-    
-  
-      <Footer/>
-     
-
-
+   
     </div>
   )
 }
