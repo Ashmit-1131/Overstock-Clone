@@ -8,7 +8,7 @@ import Furniture from './Components/FurniturePage/Furniture'
 import Productpg from './Components/Pages/Productpg'
 import SideDrower from './Components/Pages/sideDrower'
 
-
+import ProductPg from './Components/Pages/Productpg'
 import Footer from './Components/Footer/Footer'
 
 
@@ -23,9 +23,9 @@ function App() {
 
     <div className="App">
 
-      <Navbar/>
-      <Home/>
-   
+      {/* <Navbar/> */}
+    <Home/> 
+   {/* <ProductPg/> */}
     </div>
   )
 }
