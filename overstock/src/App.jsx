@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import './App.css'
 import Navbar from './Components/Navbar/Navbar'
 import Home from './Components/Pages/Home'
+import Furniture from './Components/FurniturePage/Furniture'
 
 import Productpg from './Components/Pages/Productpg'
 import SideDrower from './Components/Pages/sideDrower'
@@ -21,12 +22,15 @@ function App() {
   return (
 
     <div className="App">
+
+      
       <Navbar/>
       <Home/>
     
   
       <Footer/>
      
+
 
     </div>
   )
