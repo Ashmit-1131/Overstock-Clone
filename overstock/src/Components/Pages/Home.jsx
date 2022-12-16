@@ -109,7 +109,7 @@ const Home = () => {
 
           <Box mb='100px' position='relative' >
           <Image  height="500px" width="551" m='auto' top='10px' src='https://ak1.ostkcdn.com/img/mxc/12122022-HP-A1-INTL-V2-1400x550_DSK-INTL-2.svg' alt='overstock' />
-          <Image position='absolute' zIndex='-10' top='0px' src='https://ak1.ostkcdn.com/img/mxc/12122022-HP-A1-INTL-V2-1400x550_DSK-INTL-min.jpg' ></Image>
+          <Image  position='absolute' zIndex='-10' top='0px' src='https://ak1.ostkcdn.com/img/mxc/12122022-HP-A1-INTL-V2-1400x550_DSK-INTL-min.jpg' ></Image>
           </Box>
            
           <Text fontSize='3xl' fontWeight='bold' textAlign='center' mb='50px' mt='50px' >Limited-Time Deals</Text>

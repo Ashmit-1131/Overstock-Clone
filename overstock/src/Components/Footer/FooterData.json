@@ -1,0 +1,45 @@
+[
+    {
+        "id":1,
+        "head":"MY ACCOUNT",
+        "sub": [
+            {"name":"Orders & Returns"},
+            {"name":"Email Preferences"},
+            {"name":"Account Settings"}
+        ]
+    },
+    {
+        "id":2,
+        "head":"LET US HELP",
+        "sub": [
+            {"name":"Contact Customer Care"},
+            {"name":"Shipping Information"},
+            {"name":"Return Policy"},
+            {"name":"International Help"},
+            {"name":"Accessibility"}
+        ]
+    },
+    {
+        "id":3,
+        "head":"COMPANY INFORMATION",
+        "sub": [
+            {"name":"About Overstock"},
+            {"name":"Contact Us"},
+            {"name":"Careers"},
+            {"name":"Investor Relations"},
+            {"name":"Sell Your Products"},
+            {"name":"Supply Chain Transparency"}
+        ]
+    },
+    {
+        "id":4,
+        "head":"MORE WAYS TO SHOP",
+        "sub": [
+            {"name":"Tips & Ideas"},
+            {"name":"Deals"},
+            {"name":"Clearance"},
+            {"name":"New Arrivals"}
+        ]
+    }
+
+] 
