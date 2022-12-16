@@ -145,7 +145,7 @@ import {
                   <Text id="brand_p" class="trendingRug">
                     Trending Rugs
                   </Text>
-                  <p class="washableRug">Washable Rugs</p>
+                  <p class="washableRug">Washable Rug</p>
                   <p class="roundRug">Round Rugs</p>
                   <p class="shagRug">Shag Rugs</p>
                   <p class="woolRug">Wool Rugs</p>
@@ -370,7 +370,6 @@ import {
                   <Text id="brand_p">More Ways to Shop</Text>
                   <Text id="red_p">Featured sales</Text>
                   <Text id="red_p">New Arrivals</Text>
-                  <Text id="red_p">Clearance</Text>
                   <Text id="red_p">Furniture Advice</Text>
                 </Box>
               </Box>
