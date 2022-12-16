@@ -110,7 +110,7 @@ let treadingSearch = [
 
 const Home = () => {
   return (
-    <Box >
+    <Box pt='120px'>
 
           <Box mb='10px' position='relative'>
           <Image position='absolute' m='auto' top='10px' src='https://ak1.ostkcdn.com/img/mxc/12122022-HP-A1-INTL-V2-1400x550_DSK-INTL-2.svg' alt='overstock' />
