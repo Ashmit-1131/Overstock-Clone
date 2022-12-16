@@ -14,7 +14,7 @@ export default function Navbar(){
     
 
     return(
-        <Box gap="19px" pt="1rem" pl="2.5rem" pr="2rem" pb="0.8rem" borderBottom="1px solid #EAEAEA" >
+        <Box gap="19px" pt="1rem" pl="2.5rem" pr="2rem" pb="0.8rem" borderBottom="1px solid #EAEAEA" width="100" >
                   <Flex borderBottom="1px solid #EAEAEA" pl="2rem"  align={"center"}>
                 
                 <Text as="span" fontSize={"13px"} mr="0.6rem" color="gray">Ship to : </Text>
@@ -24,7 +24,8 @@ export default function Navbar(){
             
     </Flex>
 
-            <HStack gap="20px" pt="1rem" pl="2.5rem" pr="2rem" pb="0.8rem" borderBottom="1px solid #EAEAEA">
+            <HStack
+             gap="20px" pt="1rem" pl="2.5rem" pr="2rem" pb="0.8rem" borderBottom="1px solid #EAEAEA">
                 <Link to="/">
                 <Image src='https://ak1.ostkcdn.com/img/mxc/OSTK_MAIN_LOGO_20181127KCH.jpg' alt='overstockImg' 
                   
@@ -54,7 +55,7 @@ export default function Navbar(){
                 </Box>
                 <Box>
                     
-                    <Text>{<IoIosHeartEmpty style={{fontSize:"23px"}}/>}</Text>
+                    <Text fontSize={{ base: '24px', md: '40px', lg: '56px' }}>{<IoIosHeartEmpty style={{fontSize:"23px"}}/>}</Text>
                     <Text fontSize={"13px"}>Lists</Text>
                 </Box>
                 <Link to={"/cart"}><Box>
@@ -76,7 +77,7 @@ export default function Navbar(){
                 </Box></Link>
             </HStack>
 
-            <HStack gap="10px" pl="1rem" pr="1rem" pt="0.5rem" pb="0.5rem" justify={"space-between"} borderBottom="1px solid #EAEAEA">
+            <HStack display={{base:"none",md:"flex"}} gap="10px" pl="1rem" pr="1rem" pt="0.5rem" pb="0.5rem" justify={"space-between"} borderBottom="1px solid #EAEAEA">
                 {arr && arr.map((elem,i)=>{
                     let col = "black"
 
