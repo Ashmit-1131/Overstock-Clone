@@ -159,7 +159,7 @@ const Home = () => {
          <Box width={{base:'270px',md:'98%'}} m='auto'>
          <Flex w='100%' m='auto' overflowX='auto' mb='30px'>
           {treading.map((ele,i)=>(
-                   <Box key={i} bg='#F5F5F5' minW={{base:'55%',md:'25%'}}  m='5px'>
+                   <Box key={i} bg='#F5F5F5' minW={{base:'55%',md:'25%'}}  m='5px' pb='5px'>
                     <Image src={ele.img} alt={ele.img} />
                     <Box >
                     <Text fontSize={{base:'15px',md:'lg'}} fontWeight='bold'>{ele.name}</Text>
@@ -183,7 +183,7 @@ const Home = () => {
             <Text fontSize='3xl' fontWeight='bold' textAlign='center' mb='30px' >Overstock Featured Brands</Text>
            <SimpleGrid columns={{base:'2',md:'4'}} spacing={5} m='auto' w='98%' >
             {featuredBrand .map((ele,i)=>(
-                   <Box key={i}  textAlign='center' bg='#f1f3f4'>
+                   <Box key={i}  textAlign='center' bg='#f1f3f4' pb='5px'>
                     <Image  src={ele.img} alt={ele.img} />
                     <Text>{ele.offer}</Text>
                     <Text as='b'>{ele.heading}</Text>

@@ -1,29 +1,19 @@
-import React from 'react';
-
-import { Box,Image,Button,HStack,SimpleGrid,Text,Heading,Link,Flex,Spacer,VStack, Accordion,
-    AccordionItem,Stack,
-    AccordionButton,
-    AccordionPanel,
-    AccordionIcon,Checkbox,
-    Drawer,
-    DrawerBody,
-    DrawerFooter,
-    DrawerHeader,
-    DrawerOverlay,
-    DrawerContent,
-    DrawerCloseButton,
-} from '@chakra-ui/react'
-import { useEffect } from 'react'
+import React,{useState,useEffect} from 'react';
 import axios from 'axios'
-import { useState } from 'react'
+import { Box,Image,Button,HStack,SimpleGrid,Text,Heading,Link,Flex,Spacer,VStack, Accordion, AccordionItem,Stack, AccordionButton, AccordionPanel, AccordionIcon,Checkbox,
+} from '@chakra-ui/react'
 import {ChevronDownIcon} from '@chakra-ui/icons'
 import { BsChevronDown,BsStarFill,BsStarHalf,BsStar,BsTextIndentRight } from "react-icons/bs";
+
+import {useSelector,useDispatch} from 'react-redux';
+import {store} from '../../redux/store';
+import {getProducts} from '../../redux/Products/product.actions.js'; //**** */
+import {addtocart} from '../../redux/Cart/cart.action.js'
+
 import SideDrower from './sideDrower';
 
 const ProductPg = () => {
-    const[product,setProduct] = useState([])
     const [display,setdisplay]=useState(false)
-
 
 
 let four =[<BsStarFill  size='13px'/>,<BsStarFill size='13px'/>,<BsStarFill size='13px'/>,<BsStarFill size='13px'/>,<BsStar size='13px'/>]
@@ -34,16 +24,20 @@ let one= [<BsStarFill  size='13px'/>,<BsStar size='13px'/>,<BsStar size='13px'/>
 let three = [<BsStarFill  size='13px'/>,<BsStarFill size='13px'/>,<BsStarFill size='13px'/>,<BsStar size='13px'/>,<BsStar size='13px'/>]
 let threenhalf= [<BsStarFill  size='13px'/>,<BsStarFill size='13px'/>,<BsStarFill size='13px'/>,<BsStarHalf size='13px'/>,<BsStar size='13px'/>]
 
-const getdata = async() => {
- let res = await axios.get('http://localhost:4000/product')
-//  console.log(res.data)
- setProduct(res.data)
-}
+  const Product = useSelector((store) => store.productManager.Products);
+  const dispatch = useDispatch();
+
+
+useEffect (() => {
+  getProducts(dispatch)
+},[])
+
+
+
 
 const filterRating = (e,n) => {
-//   console.log(e.target.checked)
    if(e.target.checked){
-    let newdata = product.filter((ele)=> ele.rating >= n)
+    let newdata = Product.filter((ele)=> ele.rating >= n)
     setProduct(newdata)
    }else if(!e.target.checked){
     getdata()
@@ -68,14 +62,14 @@ const handeldisplay = () => {
 }
 
 
-useEffect(()=> {
-  getdata()
-},[])
+
+
+
 
   return (
-     <Box>
- <Flex m='auto' gap='10px'>
-    <Box w='25%'  display={{base:'none',md:'block'}}>
+     <Box pt='150px' position='relative'>
+ <Flex m='auto' gap='10px' >
+    <Box w='25%'  display={{base:'none',md:'block'}} height='100vh' position='fixed'>
     
 <Accordion allowMultiple>
     <AccordionItem>
@@ -148,11 +142,11 @@ useEffect(()=> {
             
             </Box>
 
-         <Box w={{base:'100%',md:"75%"}} position='relative' >
+         <Box w={{base:'100%',md:"75%"}} ml={{base:'',md:'25%'}}>
         <Box display={{base:'block',md:'none'}} border='1px solid gray' onClick={()=>setdisplay(!display)}
-         position='fixed' bg='white' p='5px' top='0px' w='100%'> 
+         bg='white' p='5px' w='100% ' position='fixed' top='90px'> 
 
-           <Flex  alignItems='center' > <Text as='b' fontSize='20px'>Filter </Text><BsTextIndentRight size='25px'/></Flex>
+           <Flex  alignItems='center' p='5px' > <Text as='b' fontSize='20px'>Filter </Text><BsTextIndentRight size='25px'/></Flex>
         {/* Here */}
           <Box display={display?'block':'none'} >
           <SideDrower 
@@ -163,10 +157,11 @@ useEffect(()=> {
           />
           </Box>
         </Box>
-         <SimpleGrid columns={{base:'2',md:'3'}} spacing='10px'>
-                {product.map((ele)=>(
+          <SimpleGrid columns={{base:'2',md:'3'}} spacing='10px' w='96%' margin='auto' >
 
-                    <Box key={ele.id} border='1px solid gray'>
+                {Product.map((ele)=>(
+// *****************************************************************************//
+                    <Box key={ele.id} border='1px solid gray' onClick={()=>dispatch(addtocart(ele))} >
                          <Box w='100%' >
                          <Image w='100%' h='90%' src={ele.image} alt={ele.image}/>
                          </Box>
@@ -184,7 +179,7 @@ useEffect(()=> {
                          </Flex>
                     </Box>
                 ))}
-            </SimpleGrid>
+            </SimpleGrid> 
             
          </Box>
 
