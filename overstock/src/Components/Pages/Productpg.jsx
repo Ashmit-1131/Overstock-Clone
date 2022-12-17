@@ -181,11 +181,6 @@ useEffect(()=> {
                             <Text fontSize={{base:'12px',md:'sm'}}>{ele.name}</Text>
 
                             </Box>
-
-                                {/* <VStack display={{base:'none',md:'block'}}>
-                                <Text>Details</Text>
-                                <BsChevronDown/>
-                                </VStack> */}
                          </Flex>
                     </Box>
                 ))}

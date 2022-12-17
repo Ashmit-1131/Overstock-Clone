@@ -103,44 +103,49 @@ let treadingSearch = [
   'Chrismas Trees','Fireplaces'
 ]
 
+// import head from '../images/h_d.png';
+// import head2 from '../images/h_m.png';
+ import img1 from '../images/woman.jpg'
+
+
 const Home = () => {
   return (
-    <Box >
+    <Box pt='130px'>
 
-          <Box mb='100px' position='relative' >
-          <Image  height="500px" width="551" m='auto' top='10px' src='https://ak1.ostkcdn.com/img/mxc/12122022-HP-A1-INTL-V2-1400x550_DSK-INTL-2.svg' alt='overstock' />
-          <Image  position='absolute' zIndex='-10' top='0px' src='https://ak1.ostkcdn.com/img/mxc/12122022-HP-A1-INTL-V2-1400x550_DSK-INTL-min.jpg' ></Image>
+          <Box mb='10px' position='relative'>
+          <Image position='absolute' m='auto' top='10px' src='https://ak1.ostkcdn.com/img/mxc/12122022-HP-A1-INTL-V2-1400x550_DSK-INTL-2.svg' alt='overstock' />
+          <Image w='100%' src={img1} alt={img1} />
           </Box>
            
-          <Text fontSize='3xl' fontWeight='bold' textAlign='center' mb='50px' mt='50px' >Limited-Time Deals</Text>
+          <Text fontSize='3xl' fontWeight='bold' textAlign='center' mb='30px' mt='30px' >Limited-Time Deals</Text>
 
            <SimpleGrid columns={{base:'3',md:'6'}} spacing={5} w='98%' m='auto' >
             {offer.map((ele,i)=>(
                    <Box key={i} position='relative' textAlign='center'>
-                    <Image  src={ele.offer} alt={ele.offer} />
-                    <Image position='absolute' zIndex='-10'top='0px' src={ele.img} alt={ele.img} />
-                    <Text as='b'>{ele.heading}</Text>
+                    <Image position='absolute' src={ele.offer} alt={ele.offer} />
+                    <Image src={ele.img} alt={ele.img} />
+                    <Text fontSize={{base:'sm',md:'lg'}} fontWeight='bold'>{ele.heading}</Text>
                    </Box>
             ))}
           </SimpleGrid>
 
-          <Text fontSize='3xl' fontWeight='bold' textAlign='center'  mb='50px' mt='50px' >Brands we Love</Text>
-          <SimpleGrid columns={{base:'2',md:'3'}} spacing={5} w='95%' m='auto' mt='50px'>
+          <Text fontSize='3xl' fontWeight='bold' textAlign='center' mb='30px' mt='30px' >Brands we Love</Text>
+          <SimpleGrid columns={{base:'2',md:'3'}}  w='95%' m='auto' mt='10px'>
             {brands.map((ele,i)=>(
                    <Link key={i}><Image src={ele} alt={ele} /></Link>
                
             ))}
           </SimpleGrid>
 
-          
-          <Box position='relative'm='auto' mb='100px' mt='50px' w='98%'>
-          <Image  height="500px" width="551" m='auto' src='https://ak1.ostkcdn.com/img/mxc/12122022-SB-LivingRoomFurniture-1400x550_Promo1.svg?imwidth=1920' alt='overstock' />
-          <Image w='100%' top='0px' position='absolute' zIndex='-10'  src='https://ak1.ostkcdn.com/img/mxc/12122022-SB-LivingRoomFurniture-1400x550_Promo1.jpg?imwidth=1920' />
+        
+          <Box position='relative'm='auto' mb='10px' mt='10px' w='98%'>
+          <Image  position='absolute' m='auto' src='https://ak1.ostkcdn.com/img/mxc/12122022-SB-LivingRoomFurniture-1400x550_Promo1.svg?imwidth=1920' alt='overstock' />
+          <Image w='100%'  src='https://ak1.ostkcdn.com/img/mxc/12122022-SB-LivingRoomFurniture-1400x550_Promo1.jpg?imwidth=1920' />
           </Box>
 
 
-          <Text fontSize='3xl' fontWeight='bold' textAlign='center' mt='50px' mb='50px'>Beautiful Finds for Every Room</Text>
-          <SimpleGrid columns={{base:'3',md:'6'}} spacing={5} w='98%' m='auto'>
+          <Text fontSize='3xl' fontWeight='bold' textAlign='center' mb='30px' mt='30px'>Beautiful Finds for Every Room</Text>
+          <SimpleGrid columns={{base:'3',md:'6'}} spacing='5px' w='98%' m='auto'>
             {roomfinds.map((ele,i)=>(
                    <Box key={i} textAlign='center' mb='5px'>
                     <Image src={ele.img} alt={ele.img} />
@@ -149,31 +154,33 @@ const Home = () => {
             ))}
           </SimpleGrid>
          
-          <Text fontSize='3xl' fontWeight='bold' textAlign='center' mb='50px' mt='50px' >Trending This Season</Text>
+         <Text fontSize='3xl' fontWeight='bold' textAlign='center' mb='30px' mt='30px' >Trending This Season</Text>
 
-          <Flex width='98%' m='auto' overflow='auto' >
+         <Box width={{base:'270px',md:'98%'}} m='auto'>
+         <Flex w='100%' m='auto' overflowX='auto' mb='30px'>
           {treading.map((ele,i)=>(
-                   <Box key={i} bg='#F5F5F5' minW='25%' m='10px'>
-                    <Image w='100%' h='300px' src={ele.img} alt={ele.img} />
-                    <Box p='10px'>
-                    <Text fontSize='xl' fontWeight='bold'>{ele.name}</Text>
-                    <Text fontSize='ms'>{ele.dis}</Text>
+                   <Box key={i} bg='#F5F5F5' minW={{base:'55%',md:'25%'}}  m='5px'>
+                    <Image src={ele.img} alt={ele.img} />
+                    <Box >
+                    <Text fontSize={{base:'15px',md:'lg'}} fontWeight='bold'>{ele.name}</Text>
+                    <Text fontSize={{base:'15px',md:'ms'}}>{ele.dis}</Text>
                     </Box>
                    </Box>
             ))}
-          </Flex>
+          </Flex> 
+         </Box>
 
-          <Box position='relative'm='auto' mb='100px' mt='50px' w='98%'>
-          <Image  height="500px" width="551" m='auto' top='10px' src='https://ak1.ostkcdn.com/img/mxc/12122022-SB-BedroomFurniture-1400x550_Promo2.svg?imwidth=1920' alt='overstock' />
-          <Image w='100%' top='0px' position='absolute' zIndex='-10'  src='https://ak1.ostkcdn.com/img/mxc/12122022-SB-BedroomFurniture-1400x550_Promo2.jpg?imwidth=1920' />
+            <Box position='relative'm='auto' mb='30px' mt='10px' w='98%'>
+          <Image position='absolute'  m='auto' top='10px' src='https://ak1.ostkcdn.com/img/mxc/12122022-SB-BedroomFurniture-1400x550_Promo2.svg?imwidth=1920' alt='overstock' />
+          <Image w='100%' src='https://ak1.ostkcdn.com/img/mxc/12122022-SB-BedroomFurniture-1400x550_Promo2.jpg?imwidth=1920' />
           </Box>
            
-          <Box position='relative'm='auto' mb='100px' mt='50px' w='98%'>
-           <Image src='https://ak1.ostkcdn.com/img/mxc/030822-RIUpdate-Dsk.jpg?imwidth=1920' alt='bed'/>
+          <Box position='relative'm='auto' mb='10px' mt='10px' w='98%'>
+           <Image  src='https://ak1.ostkcdn.com/img/mxc/030822-RIUpdate-Dsk.jpg?imwidth=1920' alt='bed'/>
            <Image position='absolute' m='auto' top='10px' src='https://ak1.ostkcdn.com/img/mxc/030822-RIUpdate-Dsk.svg?imwidth=1920' alt='overstock' />
            </Box>
 
-           <Text fontSize='3xl' fontWeight='bold' textAlign='center' mb='50px' >Overstock Featured Brands</Text>
+            <Text fontSize='3xl' fontWeight='bold' textAlign='center' mb='30px' >Overstock Featured Brands</Text>
            <SimpleGrid columns={{base:'2',md:'4'}} spacing={5} m='auto' w='98%' >
             {featuredBrand .map((ele,i)=>(
                    <Box key={i}  textAlign='center' bg='#f1f3f4'>
@@ -184,7 +191,7 @@ const Home = () => {
             ))}
           </SimpleGrid>
          
-          <Text fontSize='3xl' fontWeight='bold' textAlign='center' mb='50px' mt='50px' >We've Got Your Style</Text>
+           <Text fontSize='3xl' fontWeight='bold' textAlign='center' mb='30px' mt='30px' >We've Got Your Style</Text>
           <SimpleGrid columns={{base:'1',md:'3'}} spacing={5} m='auto' w='98%' >
             {style.map((ele,i)=>(
                    <Box key={i} bg='#f1f3f4'>
@@ -197,14 +204,14 @@ const Home = () => {
             ))}
           </SimpleGrid>
 
-          <Link><Button bg='#2f3337' color='white' display='block' m='auto' mt='50px' p='10px' w='150px'>See All Styles</Button></Link>
+         <Link><Button bg='#2f3337' color='white' display='block' m='auto' mt='50px' p='10px' w='150px'>See All Styles</Button></Link>
             
-          <Text fontSize='3xl' fontWeight='bold' textAlign='center' mb='50px' mt='50px' >Trending Searches</Text>
+          <Text fontSize='3xl' fontWeight='bold' textAlign='center' mb='30px' mt='30px' >Trending Searches</Text>
              <SimpleGrid columns={{base:'2',md:'3'}} spacing={5} w='98%' m='auto'>
                 {treadingSearch.map((ele,i)=>(
                   <Box key={i} textAlign='center' bg='#f1f3f4' p='10px'><Link><Text fontSize='lg' as='b'>{ele}</Text></Link></Box>
                 ))}
-              </SimpleGrid>
+              </SimpleGrid> 
 
 
     </Box>
