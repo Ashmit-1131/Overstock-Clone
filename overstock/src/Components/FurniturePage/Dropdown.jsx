@@ -7,7 +7,6 @@ import {
     Image,
     Input,
     SimpleGrid,
-    Spacer,
     Text,
   } from "@chakra-ui/react";
   import { Link, useNavigate } from "react-router-dom";
