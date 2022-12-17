@@ -10,6 +10,7 @@ import SideDrower from './Components/Pages/sideDrower'
 
 
 import Footer from './Components/Footer/Footer'
+import Dropdown from './Components/FurniturePage/Dropdown'
 
 
 // import Furniture from './Components/FurniturePage/Furniture'
@@ -22,10 +23,10 @@ function App() {
   return (
 
     <div className="App">
-
       <Navbar/>
-      <Home/>
-   
+      <Dropdown/>
+      {/* <Home/> */}
+      {/* <Furniture/> */}
     </div>
   )
 }
