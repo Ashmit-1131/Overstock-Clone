@@ -13,6 +13,7 @@ import Footer from './Components/Footer/Footer'
 import Dropdown from './Components/FurniturePage/Dropdown'
 import AllRoutes from './Components/AllRoutes'
 import { ChakraProvider } from '@chakra-ui/react'
+import Home from './Components/Pages/Home'
 
 
 // import Furniture from './Components/FurniturePage/Furniture'
@@ -26,22 +27,10 @@ function App() {
 
     <div className="App">
 
-      <Navbar/>
+      {/* <Navbar/> */}
       <Dropdown/>
       {/* <Home/> */}
       {/* <Furniture/> */}
-
-
-      <ChakraProvider>
-      <Navbar/>
-     <AllRoutes/>
-  
-      <Footer/>
-      </ChakraProvider>
-      
-     
-
-
 
     </div>
   )
