@@ -9,6 +9,8 @@ import SideDrower from './Components/Pages/sideDrower'
 
 import ProductPg from './Components/Pages/Productpg'
 import Footer from './Components/Footer/Footer'
+
+import Dropdown from './Components/FurniturePage/Dropdown'
 import AllRoutes from './Components/AllRoutes'
 import { ChakraProvider } from '@chakra-ui/react'
 
@@ -24,6 +26,12 @@ function App() {
 
     <div className="App">
 
+      <Navbar/>
+      <Dropdown/>
+      {/* <Home/> */}
+      {/* <Furniture/> */}
+
+
       <ChakraProvider>
       <Navbar/>
      <AllRoutes/>
@@ -32,6 +40,7 @@ function App() {
       </ChakraProvider>
       
      
+
 
 
     </div>
