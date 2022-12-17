@@ -5,24 +5,28 @@
   }
   
   #header-container {
-    text-align: left;
-    position: fixed;
+    /* text-align: left; */
+    /* position: fixed; */
     left: -15px;
     top: 0;
     z-index: 10;
     /* border: 2px solid red; */
+    margin-top: 10px;
+    margin-right: 500px;
   }
   body {
     background-color: rgb(255, 255, 255);
     width: 100%;
-    /* border: 2px solid teal; */
+    /* border: 2px solid rgb(70, 215, 215); */
   }
   #navbar {
     width: 100%;
-    box-sizing: border-box;
-    position: fixed;
-    margin-bottom: 30px;
+    /* box-sizing: border-box; */
+    /* position: fixed; */
+    /* margin-bottom: 30px; */
     background-color: white;
+    /* border: 3px solid yellow; */
+    /* margin-right: 400px; */
   }
   
 
@@ -39,7 +43,9 @@
   #dropDiv_11,
   #dropDiv_12,
   #dropDiv_13 {
-    padding: 2px 0;
+    padding: 2px;
+    /* width: 100%; */
+    /* border: 3px solid green; */
    
   }
   #dropDiv_1:hover,
@@ -55,91 +61,93 @@
   #dropDiv_11:hover,
   #dropDiv_12:hover,
   #dropDiv_13:hover {
-    border-bottom: 2px solid red;
+    /* border-bottom: 2px solid red; */
+    padding: 2px;
   }
   #dropDiv_1:hover #drop_1 {
     visibility: visible;
     border: 1px solid black;
-    margin-top: -112px;
-    
+    margin-top: 110px;
+    /* border: 4px solid aqua; */
   }
   #dropDiv_2:hover #drop_2 {
     visibility: visible;
-    margin-top: -112px;
-    border: 1px solid black;
+    margin-top: 110px;
+    /* border: 10px solid black; */
 
 
   }
   #dropDiv_3:hover #drop_3 {
     visibility: visible;
-    margin-top: -112px;
+    margin-top: 110px;
     border: 1px solid black;
 
   }
   #dropDiv_4:hover #drop_4 {
     visibility: visible;
-    margin-top: -112px;
+    margin-top: 110px;
     border: 1px solid black;
 
   }
   #dropDiv_5:hover #drop_5 {
     visibility: visible;
-    margin-top: -112px;
+    margin-top: 110px;
     border: 1px solid black;
 
   }
   #dropDiv_6:hover #drop_6 {
     visibility: visible;
-    margin-top: -112px;
+    margin-top: 110px;
     border: 1px solid black;
 
   }
   #dropDiv_7:hover #drop_7 {
     visibility: visible;
-    margin-top: -112px;
+    margin-top: 110px;
     border: 1px solid black;
 
   }
   #dropDiv_8:hover #drop_8 {
     visibility: visible;
-    margin-top: -112px;
+    margin-top: 110px;
     border: 1px solid black;
 
   }
   #dropDiv_9:hover #drop_9 {
     visibility: visible;
-    margin-top: -112px;
+    margin-top: 110px;
     border: 1px solid black;
 
   }
   #dropDiv_10:hover #drop_10 {
     visibility: visible;
-    margin-top: -112px;
+    margin-top: 110px;
     border: 1px solid black;
 
   }
   #dropDiv_11:hover #drop_11 {
     visibility: visible;
-    margin-top: -112px;
+    margin-top: 110px;
     border: 1px solid black;
 
   }
   #dropDiv_12:hover #drop_12 {
     visibility: visible;
-    margin-top: -112px;
+    margin-top: 110px;
     border: 1px solid black;
 
   }
   #dropDiv_13:hover #drop_13 {
     visibility: visible;
-    margin-top: -112px;
+    margin-top: 110px;
     border: 1px solid black;
 
   }
   
   #dropDiv_13 {
     color: rgb(206, 60, 70);
-    border: 1px solid red;
+    /* border: 1px solid red; */
+    /* border: 3px solid black; */
   }
   
   #brand_p {
@@ -148,14 +156,14 @@
     margin-top: 20px;
     margin-bottom: 20px;
     font-size: 17px;
-    
+    /* border: 4px solid orange; */
   }
   
   #extraOff_p {
     font-size: 20px;
     color: black;
     font-weight: 600;
-    border: 1px solid red;
+    /* border: 10px solid red; */
 
   }
   
@@ -163,7 +171,7 @@
     color: rgb(235, 5, 5);
     font-weight: 600;
     line-height: 1.9;
-    /* border: 1px solid red; */
+    border: 1px solid red;
 
   }
   #drop_1,
@@ -183,7 +191,7 @@
     z-index: 2;
     padding: 0 0 20px 40px;
     background-color: white;
-    /* border: 100px solid red; */
+    /* border: 100px solid blue; */
 
   }
   #drop_6,
@@ -215,6 +223,7 @@
     width: 250px;
     line-height: 1.8;
     background-color: rgb(255, 255, 255);
+    /* border: 10px solid red; */
   }
 
   #drop_2 > div {
@@ -222,7 +231,7 @@
     background-color: rgb(255, 255, 255);
     line-height: 1.9;
     padding-left: 20px;
-    /* border: 1px solid red; */
+    /* border: 10px solid red; */
 
   }
   
@@ -231,7 +240,7 @@
     line-height: 1.95;
     background-color: rgb(255, 255, 255);
     padding-left: 20px;
-    /* border: 1px solid red; */
+    /* border: 10px solid red; */
   }
   
   #drop_4 > div {
@@ -239,6 +248,7 @@
     width: 220px;
     background-color: rgb(255, 255, 255);
     padding-left: 20px;
+    /* border: 4px solid blue; */
   }
   
   #drop_5 > div {
@@ -246,6 +256,7 @@
     background-color: rgb(255, 255, 255);
     padding-left: 20px;
     line-height: 1.95;
+        /* border: 4px solid blue; */
   }
   
   #drop_6 > div {
@@ -253,6 +264,8 @@
     line-height: 1.95;
     background-color: rgb(255, 255, 255);
     padding-left: 20px;
+        /* border: 4px solid blue; */
+
   }
   #drop_7 > div {
     width: 220px;
@@ -296,7 +309,7 @@
     font-weight: 600;
     font-size: 20px;
     margin-top: 0px;
-    /* border: 1px solid red; */
+    border: 1px solid red;
 
   }
   #drop12_div {
@@ -397,6 +410,7 @@
     padding: 15px;
     width: 200px;
     background-color: white;
+    /* border: 2px solid blue; */
   }
   
   #accountDiv:hover #account-hover {
@@ -408,10 +422,10 @@
   
   @media all and (min-width: 0px) and (max-width: 1023px) {
     #nav_1 {
-      display: none;
+      display: flex;
     }
     #searchBox_Div {
-      display: none;
+      display: flex;
     }
     #navbar {
       border-bottom: 1px solid #cecece;
@@ -420,11 +434,12 @@
       align-items: center;
     }
     #Navlinks_div {
-      display: none;
+      display: flex;
     }
     #accountDiv-Parent {
       position: absolute;
       right: 0;
+      /* border: 10px solid black; */
     }
     #menuDiv_hamburger {
       display: block;
@@ -432,5 +447,6 @@
     #sortDropdown_Div {
       position: relative;
       left: -120px;
+      /* border: 10px solid blue; */
     }
   }
