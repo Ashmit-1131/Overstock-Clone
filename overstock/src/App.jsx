@@ -2,9 +2,11 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
 import Navbar from './Components/Navbar/Navbar'
-import Home from './Components/Pages/Home'
+
 
 import Footer from './Components/Footer/Footer'
+import AllRoutes from './Components/AllRoutes'
+import { ChakraProvider } from '@chakra-ui/react'
 
 
 // import Furniture from './Components/FurniturePage/Furniture'
@@ -15,11 +17,13 @@ function App() {
 
   return (
     <div className="App">
+      <ChakraProvider>
       <Navbar/>
-      <Home/>
-    
+     <AllRoutes/>
   
       <Footer/>
+      </ChakraProvider>
+      
      
     </div>
   )
