@@ -10,15 +10,16 @@ import SideDrower from './Components/Pages/sideDrower'
 import ProductPg from './Components/Pages/Productpg'
 import Footer from './Components/Footer/Footer'
 
+import Cart from './Components/Pages/Cartpg'
 import Dropdown from './Components/FurniturePage/Dropdown'
 import AllRoutes from './Components/AllRoutes'
-import { ChakraProvider } from '@chakra-ui/react'
 import Home from './Components/Pages/Home'
 
 
+
 // import Furniture from './Components/FurniturePage/Furniture'
-
-
+import Router from './Components/Pages/Allrouts'
+import ProductDetail from './Components/Pages/Productdetail'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -26,11 +27,11 @@ function App() {
   return (
 
     <div className="App">
-
-      {/* <Navbar/> */}
-      <Dropdown/>
-      {/* <Home/> */}
-      {/* <Furniture/> */}
+      {/* <Navbar/>   */}
+      {/* <Router/> */}
+    {/* <Home/>  */}
+     {/* <ProductPg/>   */}
+     <ProductDetail/>
 
     </div>
   )
