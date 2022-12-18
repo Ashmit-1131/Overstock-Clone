@@ -1,9 +1,9 @@
 import { Routes, Route} from "react-router-dom"
 
-import Home from "./Pages/Home"
-import Account from "./LoginPage/Account"
-import Products from "./Pages/Productpg.jsx"
-import Cart from "./Cartpage/Cart"
+import Home from "./Pages/Home";
+import Account from "./LoginPage/Account";
+import Products from "./Pages/Productpg.jsx";
+import Cart from "./Cartpage/Cart";
 
 
 export default function AllRoutes(){
