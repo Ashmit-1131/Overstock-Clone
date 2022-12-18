@@ -22,11 +22,11 @@ function App() {
   return (
 
     <div className="App">
-      {/* <Navbar/>   */}
-      {/* <Router/> */}
+     <Navbar/>   
+     <Router/> 
     {/* <Home/>  */}
      {/* <ProductPg/>   */}
-     <ProductDetail/>
+      {/* <ProductDetail/> */}
 
     </div>
   )

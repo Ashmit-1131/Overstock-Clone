@@ -33,8 +33,6 @@ useEffect (() => {
 },[])
 
 
-
-
 const filterRating = (e,n) => {
    if(e.target.checked){
     let newdata = Product.filter((ele)=> ele.rating >= n)
@@ -161,7 +159,11 @@ const handeldisplay = () => {
 
                 {Product.map((ele)=>(
 // *****************************************************************************//
-                    <Box key={ele.id} border='1px solid gray' onClick={()=>dispatch(addtocart(ele))} >
+                   
+                   
+                   <Box key={ele.id} border='1px solid gray' onClick={()=>dispatch(addtocart(ele))} >
+                   
+                         <Link href={`/product_page/${ele.id}`}>
                          <Box w='100%' >
                          <Image w='100%' h='90%' src={ele.image} alt={ele.image}/>
                          </Box>
@@ -177,7 +179,10 @@ const handeldisplay = () => {
 
                             </Box>
                          </Flex>
+                         </Link>
+                        
                     </Box>
+                   
                 ))}
             </SimpleGrid> 
             

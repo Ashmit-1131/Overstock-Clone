@@ -17,6 +17,8 @@ export const getProducts = (dispatch) => {
 
  };
 
+ 
+
 export const addtocart = (product) => ({ type:ADD_TO_CART, payload: product});
 
 export const removefromcart = (id) => ({ type:REMOVE_FROM_CART, payload:id});

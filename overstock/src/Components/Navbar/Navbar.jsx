@@ -30,7 +30,7 @@ export default function Navbar(){
                 </Box>
                 <Flex w='60%'>
                     <Input placeholder="Search...everything you finds for free" size='25px' p='5px' borderTopRightRadius='0px'/>
-                    <Link ><Text  bg="#ff1f2c" color="white" p='6px' fontSize='25px'  borderBottomRightRadius="5px" borderTopRightRadius="5px">{<IoIosSearch size='25px' />}</Text></Link>
+                    <Link href='/product_page'><Text  bg="#ff1f2c" color="white" p='6px' fontSize='25px'  borderBottomRightRadius="5px" borderTopRightRadius="5px">{<IoIosSearch size='25px' />}</Text></Link>
                 </Flex>
                <Spacer/>
                 <Box >
