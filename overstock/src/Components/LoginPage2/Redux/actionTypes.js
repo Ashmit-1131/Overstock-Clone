@@ -1,0 +1,5 @@
+
+export const GET_LOADING = "GET_LOADING";
+export const GET_ERROR = "GET_ERROR";
+export const LOGIN_SIGNUP_SUCCESS = "LOGIN_SIGNUP_SUCCESS";
+export const SIGNOUT_SUCCESS = "SIGNOUT_SUCCESS";

@@ -1,6 +1,7 @@
 import { Box, SimpleGrid ,Flex,Text,Image} from "@chakra-ui/react";
-import Login from "./Login";
-import SignUp from "./Signup";
+import React from "react";
+import Login from "./Login2";
+import SignUp from "./SignUp2";
 
 let foot = ["Return Policy","Contact Customer Care","FAQ,Privacy Policy",
     "Site User Terms & Conditions*","© 2022 Overstock.com All Rights Reserved","We self-certify compliance with:"]
