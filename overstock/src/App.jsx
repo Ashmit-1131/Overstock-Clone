@@ -6,7 +6,7 @@ import AllRoutes from './Components/AllRoutes'
 import Footer from './Components/Footer/Footer'
 
 
-
+import Navbar from './Components/Navbar2/Navbar'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -15,8 +15,10 @@ function App() {
 
     <div className="App">
       <Navbar/>
+
       <AllRoutes/>
       <Footer/>
+
 
     </div>
   )
