@@ -31,7 +31,8 @@ const Login = () => {
       if(res.data.token){
             succesFunction()();
             dispatch(loginSignupSuccess(res.data.token));
-            navigate("/furniture");
+            navigate("/");
+            // redirect after login succesfull
       }else{
             errorFunction()();
       }
