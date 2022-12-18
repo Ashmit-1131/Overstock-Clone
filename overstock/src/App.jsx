@@ -1,16 +1,11 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
-import Navbar from './Components/Navbar/Navbar'
-
-
-import Productpg from './Components/Pages/Productpg'
-import SideDrower from './Components/Pages/sideDrower'
-
-import ProductPg from './Components/Pages/Productpg'
+import Navbar from './Components/Navbar2/Header'
 import Footer from './Components/Footer/Footer'
 import AllRoutes from './Components/AllRoutes'
-import { ChakraProvider } from '@chakra-ui/react'
+
+
 
 
 // import Furniture from './Components/FurniturePage/Furniture'
@@ -24,12 +19,12 @@ function App() {
 
     <div className="App">
 
-      <ChakraProvider>
+     
       <Navbar/>
      <AllRoutes/>
   
       <Footer/>
-      </ChakraProvider>
+     
       
      
 
