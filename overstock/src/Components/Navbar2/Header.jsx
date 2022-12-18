@@ -269,7 +269,7 @@ import {
           >
             <Box id="dropDiv_1">
               <Link
-                to={"/furniture"}
+                href="/furniture"
                 _hover={{
                   textDecoration: "none",
                 }}
