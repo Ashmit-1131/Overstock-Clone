@@ -94,7 +94,7 @@ const Login = () => {
             fontWeight={"bold"}
             onClick={handleLogin}
             disabled={email === "" || password === ""}
-            isLoading={loading}
+          
             >Sign In</Button>
             <Box mt={"20px"} textDecoration="underline 1px solid blue" color="#0272a2" fontWeight={700}>Forgot Your Password?</Box>
         </Box>

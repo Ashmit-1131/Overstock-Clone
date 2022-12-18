@@ -47,7 +47,7 @@ function SignUp() {
           title: "Account Created Successfully",
           description: "Please Login and Start Shopping",
           status: "success",
-          duration:0,
+          duration:3000,
           isClosable: true,
           position: "bottom-right"
         });
@@ -58,7 +58,7 @@ function SignUp() {
           title: "Account Not Created",
           description: "Please Enter Valid Email or Password",
           status: "error",
-          duration: 0,
+          duration: 3000,
           isClosable: true,
           position: "bottom-right"
         });
@@ -68,8 +68,8 @@ function SignUp() {
 
 
 
-    return (<>
-        <Box pl={10} pr={10} pb={10} borderRight="1px solid #EAEAEA">
+    return (
+        <Box  pl={10} pr={10} pb={10} borderRight="1px solid #EAEAEA" >
             
             <FormControl>
                 <FormLabel fontSize={14} color="#626669" fontWeight={400} >Email Address*</FormLabel>
@@ -109,7 +109,7 @@ function SignUp() {
             <Button colorScheme={"blue"} mt="20px" mb="20px" width={"326px"} height="46px" fontWeight={"bold"}
               onClick={handleSubmit}
               disabled={email === "" || password === "" || !email.includes("@",".com") || confPassword.length < 5 || password.length < 5 || password !=confPassword}
-              isLoading={loading}
+            
            >Create Account</Button>
             <br />
             <hr color="#EAEAEA"/>
@@ -130,6 +130,6 @@ function SignUp() {
             <Text as="span" fontWeight={700} textDecoration="underline 1px solid black">Privacy Policy</Text></Box>
             <Box>**You can unsubsribe at any time</Box>
         </Box>
-    </>);
+    );
 }
 export default SignUp;

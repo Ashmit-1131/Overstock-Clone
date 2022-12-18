@@ -1,14 +1,9 @@
 import {Box,VStack,Image,Stack,ListItem,UnorderedList, Grid,Select,GridItem,TabPanel,Tab,TabList,TabPanels,Tabs,
     Container,Flex,Spacer,Heading,Badge,Link,Text,Divider, HStack,Radio,RadioGroup,Button
 } from "@chakra-ui/react"
-import {StarIcon} from "@chakra-ui/icons"
 
-import { BiRupee } from "react-icons/bi";
-import { useState,useEffect,useRef } from "react"
-import { GrFacebookOption,GrTwitter,GrPinterest,GrLinkedin,GrSnapchat } from "react-icons/gr";
-import { FcCheckmark } from "react-icons/fc";
-import { BsWhatsapp,BsSnapchat } from "react-icons/bs";
-import {FcDataProtection,FcShipped,FcMoneyTransfer,FcAssistant} from "react-icons/fc";
+import { useState,useEffect } from "react"
+
 import { MdAddShoppingCart } from "react-icons/md";
 import {useParams} from "react-router-dom"
 import axios from "axios";
@@ -20,13 +15,13 @@ import {addtocart} from '../../redux/Cart/cart.action.js'
 const ProductDetail = () => {
 
 const [Item,setItem] = useState([])
-const [tabIndex, setTabIndex] = useState(0)
+
 
 const Product = useSelector((store) => store.productManager.Products);
 const dispatch = useDispatch();
 
 const param = useParams()
-// console.log(param)
+ console.log(param)
 
 let four =[<BsStarFill  size='20px'/>,<BsStarFill size='20px'/>,<BsStarFill size='20px'/>,<BsStarFill size='20px'/>,<BsStar size='20px'/>]
 let five=[<BsStarFill  size='20px'/>,<BsStarFill size='20px'/>,<BsStarFill size='20px'/>,<BsStarFill size='20px'/>,<BsStarFill  size='20px'/>]
@@ -38,10 +33,10 @@ let threenhalf= [<BsStarFill  size='20px'/>,<BsStarFill size='20px'/>,<BsStarFil
 
 
 
-
+//${param.id}
 
 const fetchdata = async () => {
-  let res = await axios.get(`http://localhost:4000/product/${param.id}`) 
+  let res = await axios.get(`http://localhost:4000/product/5`) 
   console.log(res.data)
   setItem([res.data])
 }
@@ -62,7 +57,7 @@ const fetchdata = async () => {
 
 
     return(
-         <Box pt='100px' fontSize='14px' w='93%' m='auto' mb='50px'>
+         <Box pt='150px' fontSize='14px' w='93%' m='auto' mb='50px'>
            {
                Item && Item.map((element)=>{
               return(
