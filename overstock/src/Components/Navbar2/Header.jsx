@@ -24,7 +24,7 @@ import {
   } from "react-icons/ai";
   import { useDispatch, useSelector } from "react-redux";
   import { useEffect } from "react";
-  import {  signoutPerformed } from "../LoginPage/Redux/action";
+  import {  signoutPerformed } from "../LoginPage2/Redux/action";
 
   
   function Header(){
@@ -269,7 +269,7 @@ import {
           >
             <Box id="dropDiv_1">
               <Link
-                to={"/furniture"}
+                href="/furniture"
                 _hover={{
                   textDecoration: "none",
                 }}
