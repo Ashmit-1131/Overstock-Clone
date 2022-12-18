@@ -1,6 +1,7 @@
 
 import {Box,VStack,Heading,Flex, HStack,Text,Image,Table,Tr,Th,Button,Square,Divider,TableContainer,
-    Tbody,Thead
+    Tbody,Thead,
+    
 } from "@chakra-ui/react";
 import { DeleteIcon,CheckIcon } from '@chakra-ui/icons'
 import { useState,useEffect } from "react";
@@ -19,13 +20,12 @@ const handeldelete = (id) => {
       //console.log(id)
       let newdata = cartData.filter((ele)=> ele.id !== id)
       localStorage.setItem("CartData",JSON.stringify(newdata));
-      setCount(count+1)
+    
 }
 
 useEffect(()=>{
   let Tprice =DataStore && DataStore.map((item)=>settotal((prev)=>prev+item.price))
   setCartdata(DataStore)
-  console.log(count)
 },[count]);
 
 
@@ -40,10 +40,10 @@ if(DataStore.length <= 0 && cartData <= 0){
 
 
   return(
-    <Flex pt='200px' w={{base:'99%',md:'90%'}} m='auto' mb='20px' gap='20px' flexDirection={{base:'column',md:'row'}} >
+    <Flex pt='200px' w={{base:'99%',md:'90%'}} m='auto' mb='20px' gap='50px' flexDirection={{base:'column',md:'row'}} >
 
- <Box border='1px solid gray' m='auto'  w={{base:'99%',md:'100%'}}>
-    <Table >
+ <Box border='1px solid gray' m='auto' width='900px' >
+    <Table    w='100%' >
    
   <Thead>
   <Tr bg='#f7f7f7'>
@@ -57,7 +57,7 @@ if(DataStore.length <= 0 && cartData <= 0){
    {cartData.map((ele)=>{
     
        return(
-       <Tr key={ele.id}>
+       <Tr key={ele.id} >
            <Th w='120px'  p='10px' textAlign='center'>
                <Image w='100%'src={ele.img1}/>
              <Text display={{base:'block',md:'none'}} color='green.500'>Price: ₹{ele.price}.00</Text>
@@ -79,14 +79,14 @@ if(DataStore.length <= 0 && cartData <= 0){
    })}
    </Tbody>
 </Table>
- </Box>   
+ </Box>  
 
    <Box w={{base:'99%',md:'30%'}} >
      
-     <Box border='1px solid #A0AEC0' h='fit-content'  fontWeight='bold'>
+     <Box border='1px solid #A0AEC0' h='fit-content'  fontWeight='bold' w='300px' m='auto' >
      <Text className="header2" bg='#f7f7f7'>Checkout Details</Text>
      <Divider bg='#A0AEC0'/>
-     <Box className='cart_box' >
+     <Box className='cart_box' p='10px'>
       <Text textAlign='left'>Total Items: {cartData.length}</Text>
       
       <Text textAlign='left'>Sub Total: ₹{total}</Text>
@@ -94,7 +94,9 @@ if(DataStore.length <= 0 && cartData <= 0){
       <Square size='1px' w='100%' bg='#A0AEC0' m='auto' mt='20px' mb='20px'></Square>
    
         <Text textAlign='left' mb='10px'>Cart Total: ₹{total}</Text>
-       <Button bg='orange.300' size='sm'borderRadius='0px' w='100%'>Checkout Now</Button>
+       <Button bg='#c7202c' size='sm'borderRadius='0px' w='100%' 
+       onClick={()=>alert('Order Plased Sucessfully !')}
+       >Checkout Now</Button>
        </Box>
        </Box>
       </Box>
