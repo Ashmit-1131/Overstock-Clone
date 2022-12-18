@@ -34,7 +34,7 @@ export default function Navbar(){
                 </Flex>
                <Spacer/>
                 <Box >
-                    <Link to="/accounts">
+                    <Link href="/account">
                         <Text ml="10px">{<BsPerson style={{fontSize:"23px"}}/>}</Text>
                         <Text fontSize={"13px"}>Account</Text>
                     </Link>
@@ -65,7 +65,7 @@ export default function Navbar(){
                 <Button bg='black' color='white' borderRadius='none' pl='10px' pr='10px'>Checkout</Button>
             </HStack> 
 
-            <HStack display={{base:"none",md:"flex"}} gap="10px" pl="1rem" pr="1rem" pt="0.5rem" pb="0.5rem" justify={"space-between"} borderBottom="1px solid #EAEAEA">
+    <HStack display={{base:"none",md:"flex"}} gap="10px" pl="1rem" pr="1rem" pt="0.5rem" pb="0.5rem" justify={"space-between"} borderBottom="1px solid #EAEAEA">
                 {arr && arr.map((elem,i)=>{
                     let col = "black"
 
@@ -75,7 +75,9 @@ export default function Navbar(){
                     if(elem==="|"){
                         col = "black"
                     }
+
                     return <Link key={i} to="/products"><Box color={col} 
+
                     fontSize="14px" 
                     fontWeight={"normal"}
                     _hover={{textDecoration:`underline 2px solid ${col}`,textUnderlineOffset:"0.7rem"}}>{elem}</Box></Link>

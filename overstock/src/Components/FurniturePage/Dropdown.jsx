@@ -7,7 +7,6 @@ import {
     Image,
     Input,
     SimpleGrid,
-    Spacer,
     Text,
   } from "@chakra-ui/react";
   import { Link, useNavigate } from "react-router-dom";
@@ -440,7 +439,7 @@ import {
                 </Box>
                 <Box>
                   <Image
-                    w={"300px"}
+                    // w={"300px"}
                     p={"30px 30px 0 0"}
                     src="https://ak1.ostkcdn.com/images/products/is/images/direct/538a45f243553fad39e5d9a2ea6d8c50c9ed0a6b/8-Shelves-Staggered-Bookshelf-Industrial-Etagere-Bookcase.jpg"
                     alt=""
@@ -699,7 +698,7 @@ import {
                 </Box>
               </Box>
             </Box>
-            <Box id="dropDiv_10">
+            {/* <Box id="dropDiv_10">
               <Link to={"/kids_baby"} end>
                 <Text>Kids & Baby</Text>
               </Link>
@@ -770,8 +769,10 @@ import {
                   <Text id="red_p">Furniture Advice</Text>
                 </Box>
               </Box>
-            </Box>
-            <Box id="dropDiv_11">
+            </Box> */}
+
+
+            {/* <Box id="dropDiv_11">
               <Link to={"/more"} end>
                 <Text>More</Text>
               </Link>
@@ -846,9 +847,9 @@ import {
                   <Text id="red_p">Furniture Advice</Text>
                 </Box>
               </Box>
-            </Box>
-            <Spacer />
-            <Box id="dropDiv_12">
+            </Box> */}
+            {/* <Spacer /> */}
+            {/* <Box id="dropDiv_12">
               <Text>Ideas</Text>
               <Flex direction={"column"} id="drop_12" padding={0} gap={"20px"}>
                 <Box>
@@ -918,8 +919,8 @@ import {
                   </Box>
                 </Box>
               </Flex>
-            </Box>
-            <Box id="dropDiv_13">
+            </Box> */}
+            {/* <Box id="dropDiv_13">
               <Text>Sales & deals</Text>
               <Flex
                 direction={"column"}
@@ -975,7 +976,7 @@ import {
                   </Box>
                 </SimpleGrid>
               </Flex>
-            </Box>
+            </Box> */}
           </Flex>
         </Box>
       </Container>
