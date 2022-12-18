@@ -3,7 +3,7 @@ import reactLogo from './assets/react.svg'
 import './App.css'
 
 
-
+import Navbar from './Components/Navbar2/Navbar'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -11,7 +11,7 @@ function App() {
   return (
 
     <div className="App">
-   
+      <Navbar/>
     </div>
   )
 }

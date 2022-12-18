@@ -24,7 +24,7 @@ import {
   } from "react-icons/ai";
   import { useDispatch, useSelector } from "react-redux";
   import { useEffect } from "react";
-  import {  signoutPerformed } from "../LoginPage/Redux/action";
+  import {  signoutPerformed } from "../LoginPage2/Redux/action";
 
   
   function Header(){
@@ -38,8 +38,8 @@ import {
       navigate("/");
     };
     return (
-      <Container id="header-container" maxW={"2xl"}>
-        <Box id="navbar">
+      <Container id="header-container" w='100%' >
+        <Box id="navbar" >
           <Flex id="nav_1" textAlign={"left"} pl={"20px"} align={"center"}>
             <Text fontSize={"12px"} color={"blackAlpha.700"}>
               Ships to:
@@ -865,7 +865,7 @@ import {
               <Link to={"/lighting"} end>
                 <Text>Lighting</Text>
               </Link>
-              <Box id="drop_9">
+              <Box id="drop_9" >
                 <Box>
                   <Text id="brand_p">Dinnerware</Text>
                   <Text>ranges & Ovens</Text>
