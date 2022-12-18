@@ -8,8 +8,9 @@ import {
     Input,
     SimpleGrid,
     Spacer,
+    Link,
     Text, } from "@chakra-ui/react";
-  import { Link, useNavigate } from "react-router-dom";
+  import { useNavigate } from "react-router-dom";
   import React from "react";
   import "./Header.css";
   import { CgShoppingCart } from "react-icons/cg";
@@ -78,7 +79,7 @@ import {
               </Box>
             </Link>
             <Flex gap={"2px"} alignItems={"center"}>
-              <Link to={"/"}>
+              <Link href={"/"}>
                 <Image
                   mt={"5px"}
                   ml={{
@@ -135,6 +136,7 @@ import {
                   outline: "none",
                 }}
               />
+              <Link href='/product_page'>
               <Button
                 bg={"#ff1f2c"}
                 borderRadius={"0 5px 5px 0"}
@@ -143,6 +145,7 @@ import {
               >
                 <AiOutlineSearch fontSize={28} fontWeight={"800"} color="white" />{" "}
               </Button>
+              </Link>
             </Flex>
             <Flex
               gap={5}
@@ -165,7 +168,7 @@ import {
                     <>
                       <Link href={"/account"}>
                         <Flex align={"center"} justify={"space-between"} mb={2}>
-                          Sign in <AiOutlineRight />
+                          {window.localStorage.getItem("token")?<Text onClick={()=>dispatch(signoutPerformed())}>Sign out</Text>:<Text>Sign in</Text>} <AiOutlineRight />
                         </Flex>
                       </Link>
                       <Link href={"/Account"}>
@@ -214,7 +217,7 @@ import {
                   end
                 >
                   <Flex direction={"column"} align={"center"}>
-                    <CgShoppingCart fontSize={"30px"} />
+                 <Link href="/cart"><CgShoppingCart fontSize={"30px"} /></Link>
                     {isAuth ? (
                       <Text
                         background={"white"}
@@ -268,14 +271,8 @@ import {
             fontSize={"14px"}
           >
             <Box id="dropDiv_1">
-              <Link
-                href="/furniture"
-                _hover={{
-                  textDecoration: "none",
-                }}
-                end
-              >
-                <Text>Furniture</Text>
+              <Link href="/furniture"  _hover={{ textDecoration: "none",}} end>
+                Furniture
               </Link>
               <Box id="drop_1">
                 <Box>

@@ -28,14 +28,8 @@ import {
             fontSize={"14px"}
           >
             <Box id="dropDiv_1">
-              <Link
-                to={"/furniture"}
-                _hover={{
-                  textDecoration: "none",
-                }}
-                end
-              >
-                <Text>Furniture</Text>
+              <Link  href="/furniture" _hover={{ textDecoration: "none",}}end>
+                Furniture
               </Link>
               <Box id="drop_1">
                 <Box>
