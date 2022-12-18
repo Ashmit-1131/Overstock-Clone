@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
-import Navbar from './Components/Navbar/Navbar'
+import Navbar2 from './Components/Navbar2/Navbar'
 
 
 import Productpg from './Components/Pages/Productpg'
@@ -27,11 +27,12 @@ function App() {
   return (
 
     <div className="App">
-      {/* <Navbar/>   */}
+      <Navbar2/>  
       {/* <Router/> */}
     {/* <Home/>  */}
      {/* <ProductPg/>   */}
      <ProductDetail/>
+     <Footer/>
 
     </div>
   )

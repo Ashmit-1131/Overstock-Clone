@@ -3,11 +3,11 @@ import React from "react";
 import { Link, Navigate } from "react-router-dom";
 import { Header } from "./Header";
 
-function Navbar (){
+function Navbar2 (){
   return (
     <Container>
       <Header />
     </Container>
   );
 };
-export default Navbar;
+export default Navbar2;
