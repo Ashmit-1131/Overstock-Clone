@@ -18,7 +18,7 @@ import {
     initState.isAuth = true;
   }
   
-  export const reducer = (state = initState, { type, payload }) => {
+  export const Authreducer = (state = initState, { type, payload }) => {
     switch (type) {
       
      
