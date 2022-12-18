@@ -1,5 +1,5 @@
 import { ArrowLeftIcon, ArrowRightIcon } from "@chakra-ui/icons";
-import { Box, Button, Center,Tag,TagLabel, Heading, IconButton, Image, SimpleGrid, Spinner, Text, useOutsideClick, Stack, Flex, useBreakpointValue } from "@chakra-ui/react";
+import { Box, Button,Link, Center,Tag,TagLabel, Heading, IconButton, Image, SimpleGrid, Spinner, Text, useOutsideClick, Stack, Flex, useBreakpointValue } from "@chakra-ui/react";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 
@@ -7,7 +7,7 @@ import React, { useEffect, useState } from "react";
 
 
 function Furniture(){
-  // const [shop, setShop] = useState([])
+
   const FurniObj=[
     {Image:"https://ak1.ostkcdn.com/img/mxc/10312022_HOLIDAY2022_Furniture_PopCat_1.jpg?imwidth=400",
      title:"Living room Furniture"
@@ -58,67 +58,67 @@ function Furniture(){
   ]
    const ShopObj =[
     {image:"https://ak1.ostkcdn.com/img/mxc/03232020-furniture-otherPopular1.jpg?imwidth=200",
-     name:"Sofas & Couches" 
+      link:'product_page',   name:"Sofas & Couches" 
     },
     {image:"https://ak1.ostkcdn.com/img/mxc/03232020-furniture-otherPopular2.jpg?imwidth=200",
-     name:"Sectional Sofas" 
+      link:'product_page',   name:"Sectional Sofas" 
     },
     {image:"https://ak1.ostkcdn.com/img/mxc/03232020-furniture-otherPopular3.jpg?imwidth=200",
-    name:"Living Room Sets" 
+     link:'product_page',   name:"Living Room Sets" 
     },
     {image:"https://ak1.ostkcdn.com/img/mxc/03232020-furniture-otherPopular4.jpg?imwidth=200",
-    name:"Living Room" 
+     link:'product_page',   name:"Living Room" 
     },
     {image:"https://ak1.ostkcdn.com/img/mxc/03232020-furniture-otherPopular5.jpg?imwidth=200",
-    name:"LoveSeats" 
+     link:'product_page',   name:"LoveSeats" 
     },
    
     {image:"https://ak1.ostkcdn.com/img/mxc/12242020-gnp-furniture-219x219_shop_more_diningrm.jpg?imwidth=200",
-    name:"Accent Chairs" 
+     link:'product_page',   name:"Accent Chairs" 
     },
       //
     {image:"https://ak1.ostkcdn.com/img/mxc/03232020-furniture-otherPopular8.jpg?imwidth=200",
-    name:"Living Room Sets" 
+     link:'product_page',   name:"Living Room Sets" 
     },
   
     {image:"https://ak1.ostkcdn.com/img/mxc/03232020-furniture-otherPopular9.jpg?imwidth=200",
-     name:"Sectional Sofas" 
+      link:'product_page',   name:"Sectional Sofas" 
     },
     {image:"https://ak1.ostkcdn.com/img/mxc/03232020-furniture-otherPopular10.jpg?imwidth=200",
-    name:"LoveSeats" 
+     link:'product_page',   name:"LoveSeats" 
     },
     {image:"https://ak1.ostkcdn.com/img/mxc/03232020-furniture-otherPopular11.jpg?imwidth=200",
-    name:"Living Room Sets" 
+     link:'product_page',   name:"Living Room Sets" 
     },
     {image:"https://ak1.ostkcdn.com/img/mxc/03232020-furniture-otherPopular12.jpg?imwidth=200",
-    name:"Accent Chairs" 
+     link:'product_page',   name:"Accent Chairs" 
     },
 
     {image:"https://ak1.ostkcdn.com/img/mxc/03232020-furniture-otherPopular13.jpg?imwidth=200",
-     name:"Sectional Sofas" 
+      link:'product_page',   name:"Sectional Sofas" 
    },
    //
    {image:"https://ak1.ostkcdn.com/img/mxc/03232020-furniture-otherPopular14.jpg?imwidth=200",
-    name:"Sectional Sofas" 
+     link:'product_page',   name:"Sectional Sofas" 
    },
    {image:"https://ak1.ostkcdn.com/img/mxc/03232020-furniture-otherPopular15.jpg?imwidth=200",
-   name:"Accent Chairs" 
+    link:'product_page',   name:"Accent Chairs" 
    },
    {image:"https://ak1.ostkcdn.com/img/mxc/03232020-furniture-otherPopular16.jpg?imwidth=200",
-   name:"Living Room Sets" 
+    link:'product_page',   name:"Living Room Sets" 
    },
    {image:"https://ak1.ostkcdn.com/img/mxc/03232020-furniture-otherPopular16.jpg?imwidth=200",
-   name:"Accent Chairs" 
+    link:'product_page',   name:"Accent Chairs" 
    },
    {image:"https://ak1.ostkcdn.com/img/mxc/03232020-furniture-otherPopular17.jpg?imwidth=200",
-    name:"LoveSeats" 
+     link:'product_page',   name:"LoveSeats" 
     },
     {image:"https://ak1.ostkcdn.com/img/mxc/071718_sale_square.svg?imwidth=200",
-    name:"Accent Chairs" 
+     link:'product_page',   name:"Accent Chairs" 
     }
    ]
     return(
-    <Box>       
+    <Box pt='180px' w='98%' m='auto' >       
        <Box w="98%" m="auto" gap="20px">
           <Flex>
             <Box w="30%" textAlign="left" p="10px" display={{base:"none", md:"block"}}>
@@ -177,8 +177,8 @@ function Furniture(){
           </Flex>
        </Box>
       <SimpleGrid  mt={3} p={5} columns={{base: 2,sm: 2,md: 4,lg: 4,}} spacing='15px'>
-        {FurniObj.map(data => (
-           <Box w="100%" h="100%" cursor="pointer" bg="white" boxShadow="2xl" p={3} key={data.id}>
+        {FurniObj.map((data,id) => (
+           <Box w="100%" h="100%" cursor="pointer" bg="white" boxShadow="2xl" p={3} key={id}>
              <Center> <Image w="100%" h="60%" src={data.Image} /></Center>
                <Heading size="xs" mt={2} >
                   {data.title}
@@ -186,22 +186,22 @@ function Furniture(){
             </Box>      
          ))}
       </SimpleGrid>
-      <Flex w="98%" m="auto" direction={{base:"column", md:"row"}} gap="10px">
+      <Flex w="98%" m="auto" direction={{base:"column", md:"row"}} gap="10px" mb="20px">
         <Box w={{base:"100%",md:"40%"}}>
            <Image src="https://ak1.ostkcdn.com/img/mxc/10312022_HOLIDAY2022_Furniture_688x444_BG01.jpg?imwidth=1024" w="100%"></Image>
         </Box>
-        <Box w={{base:"100%",md:"60%"}} textAlign="left" p="10px">
+        <Box w={{base:"100%",md:"60%"}} textAlign="left" p="30px">
           <Heading as='h4' size='md'>How to Keep Your House Warm Without Turning up the Heat</Heading>
-          <Text>As the temperature falls, your home becomes a cozy haven from the cold. Before you reach for the thermostat, find out how to keep your house warm in the fall and winter using interior design. With a few simple swaps, you can maximize heat without running up the electricity bill.</Text>
+          <Text w="80%">As the temperature falls, your home becomes a cozy haven from the cold. Before you reach for the thermostat, find out how to keep your house warm in the fall and winter using interior design. With a few simple swaps, you can maximize heat without running up the electricity bill.</Text>
           <Button colorScheme='black' variant='outline'>
                 Read More
           </Button>
         </Box>
       </Flex>
-      <Flex w="98%" m="auto" direction={{base:"column", md:"row"}} gap="10px">
+      <Flex w="98%" m="auto" direction={{base:"column", md:"row"}} gap="10px" mb="50px">
         <Box w={{base:"100%",md:"60%"}} textAlign="left" p="10px" >
           <Heading as='h4' size='md'>How to Combat Seasonal Affective Disorder With Design</Heading>
-          <Text>While there's plenty to look forward to this time of year, these colder, darker months can also take a toll on your energy and emotions. As you get your home ready for fall and winter, consider preparing your mind, too. These mood-boosting design tips can help you feel physically and psychologically better in your own space, especially if you experience seasonal affective disorder.</Text>
+          <Text w="80%">While there's plenty to look forward to this time of year, these colder, darker months can also take a toll on your energy and emotions. As you get your home ready for fall and winter, consider preparing your mind, too. These mood-boosting design tips can help you feel physically and psychologically better in your own space, especially if you experience seasonal affective disorder.</Text>
           <Button colorScheme='black' variant='outline'>
                 Read More
           </Button>
@@ -214,13 +214,15 @@ function Furniture(){
         <Heading size='lg'>Shop More Furniture</Heading>
           <Box>
           <SimpleGrid  mt={3} p={5} columns={{base: 2,sm: 3,md: 4,lg: 6,}} spacing='15px'>
-            {ShopObj.map(data => (
-            <Box w="100%" h="100%" cursor="pointer" bg="white" boxShadow="2xl" p={3} key={data.id}>
-             <Center> <Image w="100%" h="60%" src={data.image} /></Center>
-               <Heading size="xs" mt={2} >
-                  {data.name}
-               </Heading>
-            </Box>      
+            {ShopObj.map((data,id) => (
+           <Link href='/product_page'> 
+           <Box w="100%" h="100%" cursor="pointer" bg="white" boxShadow="2xl" p={3} key={id}>
+           <Center> <Image w="100%" h="60%" src={data.image} /></Center>
+             <Heading size="xs" mt={2} >
+                {data.name}
+             </Heading>
+          </Box>  
+           </Link>    
           ))}
       </SimpleGrid>
           </Box>

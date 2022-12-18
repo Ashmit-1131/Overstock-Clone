@@ -7,16 +7,259 @@ import {
     Image,
     Input,
     SimpleGrid,
-    Text,
-  } from "@chakra-ui/react";
-  import { Link, useNavigate } from "react-router-dom";
+    Spacer,
+    Link,
+    Text, } from "@chakra-ui/react";
+  import { useNavigate } from "react-router-dom";
   import React from "react";
-  import "./Dropdown.css";
+  import "./Header.css";
+  import { CgShoppingCart } from "react-icons/cg";
+  import {
+    AiOutlineUser,
+    AiOutlineHeart,
+    AiOutlineLock,
+    AiOutlineSearch,
+    AiOutlineLeft,
+    AiOutlineRight,
+    AiOutlineMenu,
+  } from "react-icons/ai";
+  import { useDispatch, useSelector } from "react-redux";
+  import { useEffect } from "react";
+  import {  signoutPerformed } from "../LoginPage2/Redux/action";
+
   
-   const Dropdown = () => {
+  function Header(){
+    const { cart, isAuth } = useSelector((state) => state);
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+ 
+  
+    const handleSignout = () => {
+      dispatch(signoutPerformed());
+      navigate("/");
+    };
     return (
-      <Container id="header-container" maxW={"2xl"}>
-        <Box id="navbar">
+      <Container id="header-container" w='100%' >
+        <Box id="navbar" >
+          <Flex id="nav_1" textAlign={"left"} pl={"20px"} align={"center"}>
+            <Text fontSize={"12px"} color={"blackAlpha.700"}>
+              Ships to:
+            </Text>
+            <Image
+              m={"0 10px"}
+              boxSize={"30px"}
+              borderRadius={"50%"}
+              src="https://ak1.ostkcdn.com/img/mxc/intFlag_IN.gif"
+              alt=""
+            />
+            <Text as={"b"} fontSize={"12px"}>
+              INDIA
+            </Text>
+          </Flex>
+          <Flex
+            h={{
+              base: "40px",
+              sm: "40px",
+              md: "60px",
+              lg: "80px",
+            }}
+            align={"center"}
+            justify={"space-between"}
+            borderBottom={{
+              base: "0",
+              sm: "0",
+              md: "0",
+              lg: "1px solid #cecece",
+            }}
+          >
+            <Link to={"/furniture"}>
+              <Box id="menuDiv_hamburger" fontSize={"30px"} ml={2}>
+                {" "}
+                <AiOutlineMenu />
+              </Box>
+            </Link>
+            <Flex gap={"2px"} alignItems={"center"}>
+              <Link href={"/"}>
+                <Image
+                  mt={"5px"}
+                  ml={{
+                    base: "15px",
+                    sm: "15px",
+                    md: "15px",
+                    lg: "0px",
+                  }}
+                  w={{
+                    base: "30px",
+                    sm: "30px",
+                    md: "30px",
+                    lg: "30px",
+                  }}
+                  h={{
+                    base: "30px",
+                    sm: "30px",
+                    md: "30px",
+                    lg: "30px",
+                  }}
+                  src="https://media.glassdoor.com/sqll/14907/overstock-com-squarelogo-1529535998697.png"
+                  alt=""
+                />
+              </Link>
+              <Link
+                to={"/"}
+                _hover={{
+                  textDecoration: "none",
+                }}
+                letterSpacing={"tighter"}
+                end
+              >
+                <Heading
+                  fontWeight={"400"}
+                  fontSize={{
+                    base: "0",
+                    sm: "0",
+                    md: "0",
+                    lg: "35px",
+                  }}
+                >
+                  overstock
+                </Heading>
+              </Link>
+            </Flex>
+            <Flex id="searchBox_Div">
+              <Input
+                borderRadius={"5px 0 0 5px"}
+                h={"35px"}
+                w={"4xl"}
+                type="text"
+                placeholder="Search... everything you find ships for free"
+                _focus={{
+                  outline: "none",
+                }}
+              />
+              <Link href='/product_page'>
+              <Button
+                bg={"#ff1f2c"}
+                borderRadius={"0 5px 5px 0"}
+                h={"35px"}
+                p={0}
+              >
+                <AiOutlineSearch fontSize={28} fontWeight={"800"} color="white" />{" "}
+              </Button>
+              </Link>
+            </Flex>
+            <Flex
+              gap={5}
+              align={"center"}
+              justify={"space-between"}
+              pr={"20px"}
+              id={"accountDiv-Parent"}
+            >
+              <Box id="accountDiv">
+                <Link to={"/account"}>
+                  <Flex direction={"column"} align={"center"}>
+                    <AiOutlineUser fontSize={"30px"} />
+                    <Text fontSize={"13px"} color={"blackAlpha.800"}>
+                      Account
+                    </Text>
+                  </Flex>
+                </Link>
+                <Box id="account-hover">
+                  {!isAuth ? (
+                    <>
+                      <Link href={"/account"}>
+                        <Flex align={"center"} justify={"space-between"} mb={2}>
+                          {window.localStorage.getItem("token")?<Text onClick={()=>dispatch(signoutPerformed())}>Sign out</Text>:<Text>Sign in</Text>} <AiOutlineRight />
+                        </Flex>
+                      </Link>
+                      <Link href={"/Account"}>
+                        <Flex align={"center"} justify={"space-between"} mb={2}>
+                          Create an Account <AiOutlineRight />
+                        </Flex>
+                      </Link>
+                    </>
+                  ) : null}
+  
+                  <Text mb={2}>My Account</Text>
+                  <Text mb={2}>Reviews</Text>
+                  <Text mb={2}>My Orders</Text>
+                  <Text>Help</Text>
+                  {isAuth ? (
+                    <>
+                      <br />
+                      <Link to={"/"}>
+                        <Flex
+                          align={"center"}
+                          justify={"space-between"}
+                          mb={2}
+                          onClick={handleSignout}
+                        >
+                          Sign out <AiOutlineRight />
+                        </Flex>
+                      </Link>
+                    </>
+                  ) : null}
+                </Box>
+              </Box>
+              <Box>
+                <Flex direction={"column"} align={"center"}>
+                  <AiOutlineHeart fontSize={"30px"} />
+                  <Text fontSize={"13px"} color={"blackAlpha.800"}>
+                    Lists
+                  </Text>
+                </Flex>
+              </Box>
+              <Box>
+                <Link
+                  to={isAuth ? "/cart" : "/signup"}
+                  _hover={{
+                    textDecoration: "none",
+                  }}
+                  end
+                >
+                  <Flex direction={"column"} align={"center"}>
+                 <Link href="/cart"><CgShoppingCart fontSize={"30px"} /></Link>
+                    {isAuth ? (
+                      <Text
+                        background={"white"}
+                        p={"0 2px"}
+                        pos={"absolute"}
+                        top={"42px"}
+                        right={"151px"}
+                        zIndex={10}
+                        fontSize="14px"
+                        color={"red"}
+                        fontWeight="800"
+                      >
+                        {/* {typeof cart == "string" ? 0 : cart.length} */}
+                      </Text>
+                    ) : null}
+  
+                    <Text fontSize={"13px"} color={"blackAlpha.800"}>
+                      Cart
+                    </Text>
+                  </Flex>
+                </Link>
+              </Box>
+              <Box>
+                <Link to={"/checkout"}>
+                  {isAuth ? (
+                    <Button
+                      bg={"#2f3337"}
+                      color={"white"}
+                      fontSize={"15px"}
+                      fontWeight={"400"}
+                      p={"0px 10px"}
+                      _hover={{
+                        background: "blackAlpha.700",
+                      }}
+                    >
+                      <AiOutlineLock /> Check Out
+                    </Button>
+                  ) : null}
+                </Link>
+              </Box>
+            </Flex>
+          </Flex>
           <Flex
             id="Navlinks_div"
             gap={14}
@@ -28,7 +271,7 @@ import {
             fontSize={"14px"}
           >
             <Box id="dropDiv_1">
-              <Link  href="/furniture" _hover={{ textDecoration: "none",}}end>
+              <Link href="/furniture"  _hover={{ textDecoration: "none",}} end>
                 Furniture
               </Link>
               <Box id="drop_1">
@@ -138,7 +381,7 @@ import {
                   <Text id="brand_p" class="trendingRug">
                     Trending Rugs
                   </Text>
-                  <p class="washableRug">Washable Rug</p>
+                  <p class="washableRug">Washable Rugs</p>
                   <p class="roundRug">Round Rugs</p>
                   <p class="shagRug">Shag Rugs</p>
                   <p class="woolRug">Wool Rugs</p>
@@ -363,13 +606,14 @@ import {
                   <Text id="brand_p">More Ways to Shop</Text>
                   <Text id="red_p">Featured sales</Text>
                   <Text id="red_p">New Arrivals</Text>
+                  <Text id="red_p">Clearance</Text>
                   <Text id="red_p">Furniture Advice</Text>
                 </Box>
               </Box>
             </Box>
             <Box id="dropDiv_5">
               <Link to={"/home_improvement"} end>
-                <Text>Home Improvement</Text>
+                <Text>Home Improve</Text>
               </Link>
               <Box id="drop_5">
                 <Box>
@@ -433,7 +677,7 @@ import {
                 </Box>
                 <Box>
                   <Image
-                    // w={"300px"}
+                    w={"300px"}
                     p={"30px 30px 0 0"}
                     src="https://ak1.ostkcdn.com/images/products/is/images/direct/538a45f243553fad39e5d9a2ea6d8c50c9ed0a6b/8-Shelves-Staggered-Bookshelf-Industrial-Etagere-Bookcase.jpg"
                     alt=""
@@ -618,7 +862,7 @@ import {
               <Link to={"/lighting"} end>
                 <Text>Lighting</Text>
               </Link>
-              <Box id="drop_9">
+              <Box id="drop_9" >
                 <Box>
                   <Text id="brand_p">Dinnerware</Text>
                   <Text>ranges & Ovens</Text>
@@ -692,7 +936,7 @@ import {
                 </Box>
               </Box>
             </Box>
-            {/* <Box id="dropDiv_10">
+            <Box id="dropDiv_10">
               <Link to={"/kids_baby"} end>
                 <Text>Kids & Baby</Text>
               </Link>
@@ -763,10 +1007,88 @@ import {
                   <Text id="red_p">Furniture Advice</Text>
                 </Box>
               </Box>
-            </Box> */}
+            </Box>
+
+            <Box id="dropDiv_11">
+              <Link to={"/gifts"} end>
+                <Text>Gifts</Text>
+              </Link>
+              <Box id="drop_11">
+                <Box>
+                  <Text id="brand_p">Holiday</Text>
+                  <Text>ranges & Ovens</Text>
+                  <Text>Refrigerators</Text>
+                  <Text>Kitchen Faucets</Text>
+                  <Text>ranges & Ovens</Text>
+                  <Text>Kitchen Faucets</Text>
+                  <Text id="brand_p">Health & Beauty</Text>
+                  <Text>Tile</Text>
+                  <Text>Laminate Flooring</Text>
+                  <Text>Vinyl Flooring</Text>
+                  <Text>Wallpaper</Text>
+                  <Text>Laminate Flooring</Text>
+                  <Text>Vinyl Flooring</Text>
+                  <Text>Wallpaper</Text>
+                </Box>
+                <Box>
+                  <Text id="brand_p">Gifting</Text>
+                  <Text>ranges & Ovens</Text>
+  
+                  <Text>Kitchen Faucets</Text>
+                  <Text>ranges & Ovens</Text>
+                  <Text>Refrigerators</Text>
+                  <Text>Kitchen Faucets</Text>
+                  <Text>Refrigerators</Text>
+                  <Text>Kitchen Faucets</Text>
+                  <Text id="brand_p">Exercise Equipemnts</Text>
+                  <Text>Tile</Text>
+                  <Text>Laminate Flooring</Text>
+                  <Text>Vinyl Flooring</Text>
+  
+                  <Text>Wallpaper</Text>
+                  <Text>Laminate Flooring</Text>
+                  <Text>Vinyl Flooring</Text>
+                  <Text>Wallpaper</Text>
+                </Box>
+                <Box>
+                  <Text id="brand_p">Pet Supplies</Text>
+                  <Text>ranges & Ovens</Text>
+                  <Text>Refrigerators</Text>
+                  <Text>Kitchen Faucets</Text>
+                  <Text>ranges & Ovens</Text>
+                  <Text>Refrigerators</Text>
+                  <Text>Kitchen Faucets</Text>
+                  <Text>ranges & Ovens</Text>
+                  <Text id="brand_p">Entryway</Text>
+                  <Text>Tile</Text>
+                  <Text>Laminate Flooring</Text>
+                  <Text>Wallpaper</Text>
+                  <Text>Wallpaper</Text>
+                  <Text>Laminate Flooring</Text>
+                  <Text>Vinyl Flooring</Text>
+                  <Text>Wallpaper</Text>
+                </Box>
+                <Box>
+                  <Image
+                    w={"300px"}
+                    p={"30px 30px 0 0"}
+                    src="https://ak1.ostkcdn.com/images/products/is/images/direct/330b18b3d83f74bb594b761389886094617cf872/Soozier-Sit-Up-Bench-Core-Workout-Adjustable-Thigh-Support-for-Home-Gym-Black.jpg"
+                    alt=""
+                  />
+                  <Text id="extraOff_p">Extra 15% off</Text>
+                  <Text>Select Furniture by Christopher Knight</Text>
+                  <Text id="brand_p">More Ways to Shop</Text>
+                  <Text id="red_p">Featured sales</Text>
+                  <Text id="red_p">New Arrivals</Text>
+                  <Text id="red_p">Clearance</Text>
+                  <Text id="red_p">Furniture Advice</Text>
+                </Box>
+              </Box>
+            </Box>
+            <Spacer />
 
 
-            {/* <Box id="dropDiv_11">
+            <Box id="dropDiv_11">
               <Link to={"/more"} end>
                 <Text>More</Text>
               </Link>
@@ -841,46 +1163,46 @@ import {
                   <Text id="red_p">Furniture Advice</Text>
                 </Box>
               </Box>
-            </Box> */}
-            {/* <Spacer /> */}
-            {/* <Box id="dropDiv_12">
-              <Text>Ideas</Text>
+            </Box>
+            <Spacer />
+            <Box id="dropDiv_12">
+              <Text>Holidays</Text>
               <Flex direction={"column"} id="drop_12" padding={0} gap={"20px"}>
                 <Box>
-                  <Text m={"20px 0"}>More Ways to Shop</Text>
+                  <Text m={"20px 0"}>Holiday decor</Text>
                   <Box id="drop12_div">
                     <Box>
                       <img
-                        src="https://ak1.ostkcdn.com/img/mxc/12202021-IdeasTab-R1MOD1.png"
+                        src="https://ak1.ostkcdn.com/img/mxc/11162022-HolidayHubR1M1-Xmas_treesv2.jpg"
                         alt=""
                       />
-                      <Text>Room Ideas</Text>
+                      <Text>Christmas Trees</Text>
                     </Box>
                     <Box>
                       <img
-                        src="https://ak1.ostkcdn.com/img/mxc/12202021-IdeasTab-R1MOD2.png"
+                        src="https://ak1.ostkcdn.com/img/mxc/11162022-HolidayHubR1M2Xmas_wreathsv2.jpg"
                         alt=""
                       />
-                      <Text>Shop by Style</Text>
+                      <Text>wreaths and Garlands</Text>
                     </Box>
                     <Box>
                       <img
-                        src="https://ak1.ostkcdn.com/img/mxc/12202021-IdeasTab-R1MOD3.png"
+                        src="https://ak1.ostkcdn.com/img/mxc/11162022-HolidayHubR1M3-Xmas_OutdoorDecorv2.jpg"
                         alt=""
                       />
-                      <Text>Shop by Room</Text>
+                      <Text>Outdoor Holiday Destinations</Text>
                     </Box>
                     <Box>
                       <img
-                        src="https://ak1.ostkcdn.com/img/mxc/02222021-ID4-Shop_Easter_Decor.png"
+                        src="https://ak1.ostkcdn.com/img/mxc/11162022-HolidayHubR1M4-Xmas_Lightsv2.jpg"
                         alt=""
                       />
-                      <Text>Shop Easter Decor</Text>
+                      <Text>Holiday Lightings</Text>
                     </Box>
                   </Box>
                 </Box>
                 <Box>
-                  <Text m={"20px 0"}>Inspiration & Ideas</Text>
+                  <Text m={"20px 0"}>Holiday Hosting</Text>
                   <Box id="drop12_div">
                     <Box>
                       <img
@@ -913,8 +1235,8 @@ import {
                   </Box>
                 </Box>
               </Flex>
-            </Box> */}
-            {/* <Box id="dropDiv_13">
+            </Box>
+            <Box id="dropDiv_13">
               <Text>Sales & deals</Text>
               <Flex
                 direction={"column"}
@@ -930,7 +1252,7 @@ import {
                 <SimpleGrid columns={4} gap={4}>
                   <Box border={"1px solid #cecece"}>
                     <img
-                      src="https://ak1.ostkcdn.com/img/mxc/02172022-TNFlyoutINTL.jpg?imwidth=320"
+                      src="https://ak1.ostkcdn.com/img/mxc/12122022-TNFlyout.svg?imwidth=320"
                       alt=""
                     />
                     <Box>
@@ -940,7 +1262,7 @@ import {
                   </Box>
                   <Box border={"1px solid #cecece"}>
                     <img
-                      src="https://ak1.ostkcdn.com/img/mxc/12132021-MOPS-StorageWithStyle.png?imwidth=320"
+                      src="https://ak1.ostkcdn.com/images/products/is/images/direct/145e00c74b62d7aeef17ec759c55ab2eec908c67/Miranda-Haus-Absorbent-Zero-Twist-Cotton-Bath-Towel-%28Set-of-2%29.jpg?imwidth=320"
                       alt=""
                     />
                     <Box>
@@ -950,7 +1272,7 @@ import {
                   </Box>
                   <Box border={"1px solid #cecece"}>
                     <img
-                      src="https://ak1.ostkcdn.com/img/mxc/12132021-MOPS-ShagRugs.png?imwidth=320"
+                      src="https://ak1.ostkcdn.com/images/products/is/images/direct/a6644245f4f28cb67f09901d1f9ca3dd894668ee/Woodland-40W-Wall-Mounted-Coat-Rack-with-Shelf-by-Bush-Furniture.jpg?imwidth=320"
                       alt=""
                     />
                     <Box>
@@ -960,7 +1282,7 @@ import {
                   </Box>
                   <Box border={"1px solid #cecece"}>
                     <img
-                      src="https://ak1.ostkcdn.com/img/mxc/12132021-MOPS-MultifunctionalFurniture.png?imwidth=320"
+                      src="https://ak1.ostkcdn.com/images/products/is/images/direct/1fda548736331a0d9e78cff9f52c274379105862/KAWOTI-4-Light-Modern-Bathroom-Vanity-Light-with-Glass-Shade.jpg?imwidth=320"
                       alt=""
                     />
                     <Box>
@@ -970,10 +1292,10 @@ import {
                   </Box>
                 </SimpleGrid>
               </Flex>
-            </Box> */}
+            </Box>
           </Flex>
         </Box>
       </Container>
     );
   };
-  export default Dropdown
+  export default Header;

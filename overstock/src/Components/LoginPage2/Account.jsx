@@ -1,13 +1,14 @@
 import { Box, SimpleGrid ,Flex,Text,Image} from "@chakra-ui/react";
+import React from "react";
 import Login from "./Login";
-import SignUp from "./Signup";
+import SignUp from "./SignUp";
 
 let foot = ["Return Policy","Contact Customer Care","FAQ,Privacy Policy",
     "Site User Terms & Conditions*","© 2022 Overstock.com All Rights Reserved","We self-certify compliance with:"]
 
 export default function Account(){
 
-    return (<Box pt={"8rem"}>
+    return (<Box pt='150px'>
         <Flex justifyContent={"center"} pt={10} pb={10}>
             <SimpleGrid columns={2} w="60%">
                 <Box fontSize={20} textAlign="left" color={"#444444"} pl={10} fontWeight={"bold"}>Create Account</Box>

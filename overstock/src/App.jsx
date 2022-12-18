@@ -1,3 +1,4 @@
+
 import reactLogo from './assets/react.svg'
 import './App.css'
 import Navbar from './Components/Navbar/Navbar'
@@ -10,8 +11,13 @@ import ProductPg from './Components/Pages/Productpg'
 import Footer from './Components/Footer/Footer'
 
 import Cart from './Components/Pages/Cartpg'
+
+
+import './App.css'
+import Navbar from './Components/Navbar2/Navbar'
+
 import AllRoutes from './Components/AllRoutes'
-import Home from './Components/Pages/Home'
+import Footer from './Components/Footer/Footer'
 
 
 
@@ -23,6 +29,17 @@ function App() {
 
     <div className="App">
      <ProductDetail/>
+
+
+function App() {
+  
+
+  return (
+    
+    <div className='App'>
+      <Navbar/>
+      <AllRoutes/>
+      <Footer/>
     </div>
   )
 }
