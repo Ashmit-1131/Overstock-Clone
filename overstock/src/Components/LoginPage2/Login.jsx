@@ -3,7 +3,7 @@ import { useToast } from "@chakra-ui/react";
 import {useState } from "react"
 import { useDispatch } from "react-redux";
 import { loginSignupSuccess } from "./Redux/action";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Navigate, useNavigate,Link } from "react-router-dom";
 const Login = () => {
   const toast = useToast();
   const dispatch = useDispatch();

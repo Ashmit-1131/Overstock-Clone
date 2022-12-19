@@ -1,8 +1,8 @@
 import { ArrowLeftIcon, ArrowRightIcon } from "@chakra-ui/icons";
-import { Box, Button,Link, Center,Tag,TagLabel, Heading, IconButton, Image, SimpleGrid, Spinner, Text, useOutsideClick, Stack, Flex, useBreakpointValue } from "@chakra-ui/react";
+import { Box, Button, Center,Tag,TagLabel, Heading, IconButton, Image, SimpleGrid, Spinner, Text, useOutsideClick, Stack, Flex, useBreakpointValue } from "@chakra-ui/react";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-
+import { Link } from "react-router-dom";
 
 
 
@@ -219,7 +219,7 @@ function Furniture(){
           <Box>
           <SimpleGrid  mt={3} p={5} columns={{base: 2,sm: 3,md: 4,lg: 6,}} spacing='15px'>
             {ShopObj.map((data,id) => (
-           <Link href='/product_page'> 
+           <Link to='/product_page'> 
            <Box w="100%" h="100%" cursor="pointer" bg="white" boxShadow="2xl" p={3} key={id}>
            <Center> <Image w="100%" h="60%" src={data.image} /></Center>
              <Heading size="xs" mt={2} >

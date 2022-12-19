@@ -8,9 +8,8 @@ import {
     Input,
     SimpleGrid,
     Spacer,
-    Link,
     Text, } from "@chakra-ui/react";
-  import { useNavigate } from "react-router-dom";
+  import { useNavigate,Link } from "react-router-dom";
   import React from "react";
   import "./Header.css";
   import { CgShoppingCart } from "react-icons/cg";
@@ -39,7 +38,7 @@ import {
       navigate("/");
     };
     return (
-      <Container id="header-container" w='100%' >
+      <Container id="header-container"  >
         <Box id="navbar" >
           <Flex id="nav_1" textAlign={"left"} pl={"20px"} align={"center"}>
             <Text fontSize={"12px"} color={"blackAlpha.700"}>
@@ -72,13 +71,13 @@ import {
               lg: "1px solid #cecece",
             }}
           >
-            <Link to={"/furniture"}>
+            <Link to="/furniture">
               <Box id="menuDiv_hamburger" fontSize={"30px"} ml={2}>
                 {" "}
                 <AiOutlineMenu />
               </Box>
             </Link>
-       <Link href='/'>
+       <Link to='/'>
        <Flex gap={"2px"} alignItems={"center"}>
        
        <Image
@@ -106,7 +105,7 @@ import {
        />
   
      <Link
-       to={"/"}
+       to="/"
        _hover={{
          textDecoration: "none",
        }}
@@ -139,7 +138,7 @@ import {
                   outline: "none",
                 }}
               />
-              <Link href='/product_page'>
+              <Link to='/product_page'>
               <Button
                 bg={"#ff1f2c"}
                 borderRadius={"0 5px 5px 0"}
@@ -213,14 +212,14 @@ import {
               </Box>
               <Box>
                 <Link
-                  to={isAuth ? "/cart" : "/signup"}
+                  to={isAuth ? "/cart" : "/account"}
                   _hover={{
                     textDecoration: "none",
                   }}
                   end
                 >
                   <Flex direction={"column"} align={"center"}>
-                 <Link href="/cart"><CgShoppingCart fontSize={"30px"} /></Link>
+                 <Link to="/cart" ><CgShoppingCart fontSize={"30px"} /></Link>
                     {isAuth ? (
                       <Text
                         background={"white"}
@@ -233,7 +232,6 @@ import {
                         color={"red"}
                         fontWeight="800"
                       >
-                        {/* {typeof cart == "string" ? 0 : cart.length} */}
                       </Text>
                     ) : null}
   
@@ -274,7 +272,7 @@ import {
             fontSize={"14px"}
           >
             <Box id="dropDiv_1">
-              <Link href="/furniture"  _hover={{ textDecoration: "none",}} end>
+              <Link to="/furniture"  _hover={{ textDecoration: "none",}} end>
                 Furniture
               </Link>
               <Box id="drop_1">
@@ -939,78 +937,7 @@ import {
                 </Box>
               </Box>
             </Box>
-            <Box id="dropDiv_10">
-              <Link to={"/kids_baby"} end>
-                <Text>Kids & Baby</Text>
-              </Link>
-              <Box id="drop_10">
-                <Box>
-                  <Text id="brand_p">Dinnerware</Text>
-                  <Text>ranges & Ovens</Text>
-                  <Text>Refrigerators</Text>
-                  <Text>Kitchen Faucets</Text>
-                  <Text>ranges & Ovens</Text>
-                  <Text>Refrigerators</Text>
-                  <Text>Kitchen Faucets</Text>
-                  <Text>ranges & Ovens</Text>
-                  <Text>Refrigerators</Text>
-  
-                  <Text id="brand_p">Cookware & Bakeware</Text>
-                  <Text>Tile</Text>
-                  <Text>Laminate Flooring</Text>
-                  <Text>Vinyl Flooring</Text>
-                  <Text>Wallpaper</Text>
-                  <Text>Laminate Flooring</Text>
-                  <Text>Vinyl Flooring</Text>
-                </Box>
-                <Box>
-                  <Text id="brand_p">Kitchen Furniture</Text>
-                  <Text>ranges & Ovens</Text>
-                  <Text>Refrigerators</Text>
-                  <Text>Kitchen Faucets</Text>
-                  <Text>ranges & Ovens</Text>
-                  <Text>Refrigerators</Text>
-                  <Text>Kitchen Faucets</Text>
-                  <Text>ranges & Ovens</Text>
-                  <Text>Refrigerators</Text>
-  
-                  <Text id="brand_p">Kitchen Appliances</Text>
-  
-                  <Text>Laminate Flooring</Text>
-                  <Text>Vinyl Flooring</Text>
-                  <Text>Wallpaper</Text>
-                  <Text>Wallpaper</Text>
-                  <Text>Laminate Flooring</Text>
-                  <Text>Vinyl Flooring</Text>
-                  <Text>Wallpaper</Text>
-                </Box>
-                <Box>
-                  <Text id="brand_p">Kids Bedding</Text>
-                  <Text>ranges & Ovens</Text>
-                  <Text>Refrigerators</Text>
-                  <Text>Kitchen Faucets</Text>
-                  <Text>ranges & Ovens</Text>
-                  <Text>Refrigerators</Text>
-                  <Text>Kitchen Faucets</Text>
-                  <Text>ranges & Ovens</Text>
-                </Box>
-                <Box>
-                  <Image
-                    w={"300px"}
-                    p={"30px 30px 0 0"}
-                    src="https://ak1.ostkcdn.com/images/products/is/images/direct/2c973d86bac975d020ee827a95a06544d8a2615c/Dina-Dinosaurs-Kids-Area-Rug.jpg?imwidth=320"
-                    alt=""
-                  />
-                  <Text id="extraOff_p">Extra 15% off</Text>
-                  <Text>Select Furniture by Christopher Knight</Text>
-                  <Text id="brand_p">More Ways to Shop</Text>
-                  <Text id="red_p">Featured sales</Text>
-                  <Text id="red_p">New Arrivals</Text>
-                  <Text id="red_p">Clearance</Text>
-                  <Text id="red_p">Furniture Advice</Text>
-                </Box>
-              </Box>
-            </Box>
+         
 
             <Box id="dropDiv_11">
               <Link to={"/gifts"} end>
@@ -1088,7 +1015,7 @@ import {
                 </Box>
               </Box>
             </Box>
-            <Spacer />
+         
 
 
             <Box id="dropDiv_11">
@@ -1167,7 +1094,7 @@ import {
                 </Box>
               </Box>
             </Box>
-            <Spacer />
+           
             <Box id="dropDiv_12">
               <Text>Holidays</Text>
               <Flex direction={"column"} id="drop_12" padding={0} gap={"20px"}>
@@ -1239,63 +1166,7 @@ import {
                 </Box>
               </Flex>
             </Box>
-            <Box id="dropDiv_13">
-              <Text>Sales & deals</Text>
-              <Flex
-                direction={"column"}
-                gap={4}
-                id="drop_13"
-                width={"870px"}
-                align={"center"}
-              >
-                <Box
-                  id="drop13_div1"
-                  background={`no-repeat center/100% url("https://ak1.ostkcdn.com/img/mxc/05142018DealsSales_OUTLINED.svg")`}
-                ></Box>
-                <SimpleGrid columns={4} gap={4}>
-                  <Box border={"1px solid #cecece"}>
-                    <img
-                      src="https://ak1.ostkcdn.com/img/mxc/12122022-TNFlyout.svg?imwidth=320"
-                      alt=""
-                    />
-                    <Box>
-                      <Text>Clearance Prices</Text>
-                      <Text>On Winter Essentials</Text>
-                    </Box>
-                  </Box>
-                  <Box border={"1px solid #cecece"}>
-                    <img
-                      src="https://ak1.ostkcdn.com/images/products/is/images/direct/145e00c74b62d7aeef17ec759c55ab2eec908c67/Miranda-Haus-Absorbent-Zero-Twist-Cotton-Bath-Towel-%28Set-of-2%29.jpg?imwidth=320"
-                      alt=""
-                    />
-                    <Box>
-                      <Text>Storage with Style</Text>
-                      <Text>Organize with Ease</Text>
-                    </Box>
-                  </Box>
-                  <Box border={"1px solid #cecece"}>
-                    <img
-                      src="https://ak1.ostkcdn.com/images/products/is/images/direct/a6644245f4f28cb67f09901d1f9ca3dd894668ee/Woodland-40W-Wall-Mounted-Coat-Rack-with-Shelf-by-Bush-Furniture.jpg?imwidth=320"
-                      alt=""
-                    />
-                    <Box>
-                      <Text>Chik Shag Rugs</Text>
-                      <Text>Shop Rugs Both Plush & Pretty</Text>
-                    </Box>
-                  </Box>
-                  <Box border={"1px solid #cecece"}>
-                    <img
-                      src="https://ak1.ostkcdn.com/images/products/is/images/direct/1fda548736331a0d9e78cff9f52c274379105862/KAWOTI-4-Light-Modern-Bathroom-Vanity-Light-with-Glass-Shade.jpg?imwidth=320"
-                      alt=""
-                    />
-                    <Box>
-                      <Text>multifunctional furniture</Text>
-                      <Text>Furnish with form & function</Text>
-                    </Box>
-                  </Box>
-                </SimpleGrid>
-              </Flex>
-            </Box>
+           
           </Flex>
         </Box>
       </Container>
