@@ -1,10 +1,10 @@
 import React,{useState,useEffect} from 'react';
 import axios from 'axios'
-import { Box,Image,Button,HStack,SimpleGrid,Text,Heading,Link,Flex,Spacer,VStack, Accordion, AccordionItem,Stack, AccordionButton, AccordionPanel, AccordionIcon,Checkbox,
+import { Box,Image,Button,HStack,SimpleGrid,Text,Heading,Flex,Spacer,VStack, Accordion, AccordionItem,Stack, AccordionButton, AccordionPanel, AccordionIcon,Checkbox,
 } from '@chakra-ui/react'
 import {ChevronDownIcon} from '@chakra-ui/icons'
 import { BsChevronDown,BsStarFill,BsStarHalf,BsStar,BsTextIndentRight } from "react-icons/bs";
-
+import { Link } from 'react-router-dom';
 import {useSelector,useDispatch} from 'react-redux';
 import {store} from '../../redux/store';
 import {getProducts} from '../../redux/Products/product.actions.js'; //**** */
@@ -163,7 +163,7 @@ const handeldisplay = () => {
                    
                    <Box key={ele.id} border='1px solid gray' onClick={()=>dispatch(addtocart(ele))} >
                    
-                         <Link href={`/product_page/${ele.id}`}>
+                         <Link to={`/product_page/${ele.id}`}>
                          <Box w='100%' >
                          <Image w='100%' h='90%' src={ele.image} alt={ele.image}/>
                          </Box>

@@ -95,7 +95,7 @@ if(DataStore.length <= 0 && cartData <= 0){
    
         <Text textAlign='left' mb='10px'>Cart Total: ₹{total}</Text>
        <Button bg='#c7202c' size='sm'borderRadius='0px' w='100%' 
-       onClick={()=>alert('Order Plased Sucessfully !')}
+       onClick={()=>alert('Order Successfully Placed !')}
        >Checkout Now</Button>
        </Box>
        </Box>
