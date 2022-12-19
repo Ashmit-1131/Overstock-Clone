@@ -36,7 +36,7 @@ let threenhalf= [<BsStarFill  size='20px'/>,<BsStarFill size='20px'/>,<BsStarFil
 //${param.id}
 
 const fetchdata = async () => {
-  let res = await axios.get(`http://localhost:4000/product/5`) 
+  let res = await axios.get(`https://icy-thread-zydeco.glitch.me/Furniture/${param.id}`) 
   console.log(res.data)
   setItem([res.data])
 }

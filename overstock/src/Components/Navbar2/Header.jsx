@@ -78,53 +78,56 @@ import {
                 <AiOutlineMenu />
               </Box>
             </Link>
-            <Flex gap={"2px"} alignItems={"center"}>
-              <Link href={"/"}>
-                <Image
-                  mt={"5px"}
-                  ml={{
-                    base: "15px",
-                    sm: "15px",
-                    md: "15px",
-                    lg: "0px",
-                  }}
-                  w={{
-                    base: "30px",
-                    sm: "30px",
-                    md: "30px",
-                    lg: "30px",
-                  }}
-                  h={{
-                    base: "30px",
-                    sm: "30px",
-                    md: "30px",
-                    lg: "30px",
-                  }}
-                  src="https://media.glassdoor.com/sqll/14907/overstock-com-squarelogo-1529535998697.png"
-                  alt=""
-                />
-              </Link>
-              <Link
-                to={"/"}
-                _hover={{
-                  textDecoration: "none",
-                }}
-                letterSpacing={"tighter"}
-                end
-              >
-                <Heading
-                  fontWeight={"400"}
-                  fontSize={{
-                    base: "0",
-                    sm: "0",
-                    md: "0",
-                    lg: "35px",
-                  }}
-                >
-                  overstock
-                </Heading>
-              </Link>
-            </Flex>
+       <Link href='/'>
+       <Flex gap={"2px"} alignItems={"center"}>
+       
+       <Image
+         mt={"5px"}
+         ml={{
+           base: "15px",
+           sm: "15px",
+           md: "15px",
+           lg: "0px",
+         }}
+         w={{
+           base: "30px",
+           sm: "30px",
+           md: "30px",
+           lg: "30px",
+         }}
+         h={{
+           base: "30px",
+           sm: "30px",
+           md: "30px",
+           lg: "30px",
+         }}
+         src="https://media.glassdoor.com/sqll/14907/overstock-com-squarelogo-1529535998697.png"
+         alt=""
+       />
+  
+     <Link
+       to={"/"}
+       _hover={{
+         textDecoration: "none",
+       }}
+       letterSpacing={"tighter"}
+       end
+     >
+       <Heading
+         fontWeight={"400"}
+         fontSize={{
+           base: "0",
+           sm: "0",
+           md: "0",
+           lg: "35px",
+         }}
+       >
+         overstock
+       </Heading>
+     </Link>
+   </Flex>
+
+       </Link>
             <Flex id="searchBox_Div">
               <Input
                 borderRadius={"5px 0 0 5px"}

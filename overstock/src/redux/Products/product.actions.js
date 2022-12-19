@@ -4,7 +4,7 @@ import {GET_PRODUCTS_LOADING,GET_PRODUCTS_SUCESS,GET_PRODUCTS_ERROR} from './pro
 export const getProducts =async (dispatch) => {
    dispatch({type:GET_PRODUCTS_LOADING});
    try{
-    let response = await axios.get('http://localhost:4000/product')
+    let response = await axios.get('https://icy-thread-zydeco.glitch.me/Furniture')
     dispatch({type:GET_PRODUCTS_SUCESS,payload:response.data})
    }
    catch(e){

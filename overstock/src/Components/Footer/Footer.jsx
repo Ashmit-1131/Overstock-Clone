@@ -8,7 +8,7 @@ export default function Footer(){
 
     return(
         <Box width="100%">
-        <Box pl="6rem" pb="3rem" pt="3rem" bg="#545658" color={"white"}>
+        <Box p='10px' bg="#545658" color={"white"}>
             <Grid templateColumns="repeat(4,1fr)" gap={"10px"}>
                 {data && data.map((item)=>{
                     return (

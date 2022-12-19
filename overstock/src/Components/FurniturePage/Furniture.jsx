@@ -118,7 +118,7 @@ function Furniture(){
     }
    ]
     return(
-    <Box pt='180px' w='98%' m='auto' >       
+    <Box pt='180px' w='98%' m='auto' mb='20px'>       
        <Box w="98%" m="auto" gap="20px">
           <Flex>
             <Box w="30%" textAlign="left" p="10px" display={{base:"none", md:"block"}}>
@@ -192,22 +192,26 @@ function Furniture(){
         </Box>
         <Box w={{base:"100%",md:"60%"}} textAlign="left" p="30px">
           <Heading as='h4' size='md'>How to Keep Your House Warm Without Turning up the Heat</Heading>
-          <Text w="80%">As the temperature falls, your home becomes a cozy haven from the cold. Before you reach for the thermostat, find out how to keep your house warm in the fall and winter using interior design. With a few simple swaps, you can maximize heat without running up the electricity bill.</Text>
-          <Button colorScheme='black' variant='outline'>
+          <Text w="80%" mt='10px'>As the temperature falls, your home becomes a cozy haven from the cold. Before you reach for the thermostat, find out how to keep your house warm in the fall and winter using interior design. With a few simple swaps, you can maximize heat without running up the electricity bill.</Text>
+          <Button colorScheme='black' variant='outline' mt='20px'>
                 Read More
           </Button>
         </Box>
       </Flex>
-      <Flex w="98%" m="auto" direction={{base:"column", md:"row"}} gap="10px" mb="50px">
-        <Box w={{base:"100%",md:"60%"}} textAlign="left" p="10px" >
+      <Flex w="98%" direction={{base:"column", md:"row"}} gap="10px" mb="50px" >
+        <Box w={{base:"100%",md:"60%"}} textAlign="left" p="10px"  pl='50px'>
           <Heading as='h4' size='md'>How to Combat Seasonal Affective Disorder With Design</Heading>
-          <Text w="80%">While there's plenty to look forward to this time of year, these colder, darker months can also take a toll on your energy and emotions. As you get your home ready for fall and winter, consider preparing your mind, too. These mood-boosting design tips can help you feel physically and psychologically better in your own space, especially if you experience seasonal affective disorder.</Text>
-          <Button colorScheme='black' variant='outline'>
+          <Text mt='10px' w="95%">While there's plenty to look forward to this time of year, these colder, 
+          darker months can also take a toll on your energy and emotions. As you get your home ready for fall
+           and winter, consider preparing your mind, too. These mood-boosting design tips can help you feel 
+           physically and psychologically better in your own space, especially if you experience seasonal 
+           affective disorder.</Text>
+          <Button colorScheme='black' variant='outline' mt='20px'>
                 Read More
           </Button>
         </Box>
-        <Box w={{base:"100%",md:"40%"}}>
-           <Image src="https://ak1.ostkcdn.com/img/mxc/10312022_HOLIDAY2022_Furniture_688x444_BG02.jpg?imwidth=1024" w="100%"></Image>
+        <Box w={{base:"100%",md:"40%"}} >
+           <Image  src="https://ak1.ostkcdn.com/img/mxc/10312022_HOLIDAY2022_Furniture_688x444_BG02.jpg?imwidth=1024" w="100%"></Image>
         </Box>
       </Flex>
       <Box>
