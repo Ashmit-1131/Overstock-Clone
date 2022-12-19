@@ -42,7 +42,7 @@ if(DataStore.length <= 0 && cartData <= 0){
   return(
     <Flex pt='200px' w={{base:'99%',md:'90%'}} m='auto' mb='20px' gap='50px' flexDirection={{base:'column',md:'row'}} >
 
- <Box border='1px solid gray' m='auto' width='900px' >
+ <Box border='1px solid gray' m='auto' width='1050px' >
     <Table    w='100%' >
    
   <Thead>
@@ -57,8 +57,8 @@ if(DataStore.length <= 0 && cartData <= 0){
    {cartData.map((ele)=>{
     
        return(
-       <Tr key={ele.id} >
-           <Th w='120px'  p='10px' textAlign='center'>
+       <Tr key={ele.id} w='100%'>
+           <Th w='250px'  p='10px' textAlign='center'>
                <Image w='100%'src={ele.img1}/>
              <Text display={{base:'block',md:'none'}} color='green.500'>Price: ₹{ele.price}.00</Text>
            </Th>
@@ -83,7 +83,7 @@ if(DataStore.length <= 0 && cartData <= 0){
 
    <Box w={{base:'99%',md:'30%'}} >
      
-     <Box border='1px solid #A0AEC0' h='fit-content'  fontWeight='bold' w='300px' m='auto' >
+     <Box border='1px solid #A0AEC0'  fontWeight='bold' w='400px' m='auto' >
      <Text className="header2" bg='#f7f7f7'>Checkout Details</Text>
      <Divider bg='#A0AEC0'/>
      <Box className='cart_box' p='10px'>

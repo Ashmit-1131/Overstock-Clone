@@ -18,8 +18,6 @@ import ProductDetail from "./Pages/Productdetail"
             <Route path="/product_page/:id" element={<ProductDetail/>}></Route>
             <Route path="/cart" element={<Cartpg/>}></Route>
             <Route path="/furniture" element={<Furniture/>}></Route> 
-             
-           
         </Routes>
     )
 }
