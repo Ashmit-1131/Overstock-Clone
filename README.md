@@ -32,3 +32,11 @@ outdoor, and kitchen and dining items, among others.
 
 ## Cart Page
 ![Screenshot (1277)](https://user-images.githubusercontent.com/108016803/208414878-82ca90eb-9483-482a-9c16-345ae9b2407e.png)
+
+
+
+
+
+![cart](https://user-images.githubusercontent.com/108016803/222518685-ece014fe-1844-4d61-836f-555b82935465.png)
+
+
