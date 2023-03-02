@@ -37,6 +37,6 @@ outdoor, and kitchen and dining items, among others.
 
 
 
-![cart](https://user-images.githubusercontent.com/108016803/222518685-ece014fe-1844-4d61-836f-555b82935465.png)
+
 
 
